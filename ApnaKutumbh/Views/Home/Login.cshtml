@@ -1,0 +1,63 @@
+﻿@model ApnaKutumbh.Models.Home
+@{
+    Layout = null;
+}
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Admin Login</title>
+    @*<link rel="shortcut icon" href="~/WebsiteCss/assets/images/favicon.png" type="image/x-icon">
+    <link rel='shortcut icon' type='image/x-icon' href="/AssociatePanelcss/assets/img/logo.png" />*@
+    <link href="../../WebsiteCss/css/bootstrap.css" rel="stylesheet">
+    <link href="../../WebsiteCss/assets/css/custom-style.css" rel="stylesheet">
+</head>
+<body>
+    <section class="h-100">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-5">
+                    <div class="card">
+                            <div class="gradient-custom-2">
+                                <div class="card-body p-5">
+                                    <center><img src="~/images/logo_1.png" style="height:100px;" class="img-fluid" /></center>
+                                    <div class="text-center">
+                                        <h5 class="mt-3 mb-5 pb-1">Please login to your account</h5>
+                                    </div>
+                                    <p style="color:red"> @TempData["Login"] </p>
+                                    @using (Html.BeginForm("LoginAction", "Home", FormMethod.Post, new { @id = "signupForm" }))
+                                    {
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="form2Example11">Enter your login id</label>
+                                            @Html.TextBoxFor(m => m.LoginId, new { @class = "form-control", @Placeholder = "Login Id", @required = "required" })
+
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="form2Example22">Enter your password</label>
+                                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", @Placeholder = "Password", @required = "required" })
+
+                                        </div>
+
+                                        <div class="text-center pt-1 mb-2">
+                                            <input type="submit" id="Login" class="text-white btn btn-block btn-login fa-lg btn-green btn-bg mb-3 p-3" name="Login" value="Sign In">
+
+                                            <a class="text-muted" href="~/Home/ForgetPassword">Forgot password?</a>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <script src="../../WebsiteCss/js/jquery.js"></script>
+    <script src="../../WebsiteCss/js/popper.min.js"></script>
+    <script src="../../WebsiteCss/js/bootstrap.min.js"></script>
+    <script src="../../WebsiteCss/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../../WebsiteCss/assets/js/script.js"></script>
+    <!--Clients Section-->
+    </body>
+</html>

@@ -1,0 +1,499 @@
+﻿
+@{
+    ViewBag.Title = "Property";
+    Layout = "~/Views/Shared/WebsiteLayout.cshtml";
+}
+
+<div class="minsection">
+    <div class="sub-banner pt-90 pb-90">
+        <div class="container">
+            <div class="col-md-8  offset-md-2">
+                <div class="text-center text-line">
+                    <h1>Property List</h1>
+                    <ul class="text-c">
+                        <li>Home</li>
+                        <li>|</li>
+                        <li class="color-t">Property List</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="pt-40 pb-40 property-list">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3" id="">
+                    <div class="min-list-pro" id="">
+                        <span class="head-text">
+                            Filter <img src="/images/filter.png" alt=""
+                                        class="img-po-f" />
+                        </span>
+                        <div class="min-f-list">
+                            <div class="filter-list">
+                                <h3>Category</h3>
+                                <ul>
+                                    <li>
+                                        <label for="Apartment">
+                                            <input type="checkbox" id="Apartment"
+                                                   class="filter" /> Apartment
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="Office">
+                                            <input type="checkbox" id="Office" class="filter" />
+                                            Office
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="Rooms">
+                                            <input type="checkbox" id="Rooms" class="filter" />
+                                            Rooms
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="House">
+                                            <input type="checkbox" id="House" class="filter" />
+                                            House
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="Villa">
+                                            <input type="checkbox" id="Villa" class="filter" />
+                                            Villa
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="filter-list">
+                                <h3>Propwerty Status</h3>
+                                <ul>
+                                    <li>
+                                        <label for="Sale">
+                                            <input type="checkbox" id="Sale" class="filter" /> For
+                                            Sale
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="Rent">
+                                            <input type="checkbox" id="Rent" class="filter" /> For
+                                            Rent
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="OpenHouse">
+                                            <input type="checkbox" id="OpenHouse"
+                                                   class="filter" /> Open House
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="HotOffer">
+                                            <input type="checkbox" id="HotOffer" class="filter" />
+                                            Hot Offer
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="Sold">
+                                            <input type="checkbox" id="Sold" class="filter" />
+                                            Sold
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="filter-list">
+                                <h3>Price Range</h3>
+                                <div class="form-group none">
+                                    <div class="input-with-icon">
+                                        <select id="price" class="form-control">
+                                            <option value="">&nbsp;</option>
+                                            <option value="1">From 40,000 To 10m</option>
+                                            <option value="2">From 60,000 To 20m</option>
+                                            <option value="3">From 70,000 To 30m</option>
+                                            <option value="3">From 80,000 To 40m</option>
+                                            <option value="3">From 90,000 To 50m</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter-list">
+                                <h3>Rooms</h3>
+                                <div class="form-group none">
+                                    <label>Bedrooms</label>
+                                    <div class="input-with-icon">
+                                        <select id="Bedrooms" class="form-control">
+                                            <option value="">&nbsp;</option>
+                                            <option value="1">Min 0 - Max 1</option>
+                                            <option value="2">Min 2 - Max 4</option>
+                                            <option value="3">Min 4 - Max 6</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group none">
+                                    <label>Bathrooms</label>
+                                    <div class="input-with-icon">
+                                        <select id="Bathrooms" class="form-control">
+                                            <option value="">&nbsp;</option>
+                                            <option value="1">Min 0 - Max 1</option>
+                                            <option value="2">Min 2 - Max 4</option>
+                                            <option value="3">Min 4 - Max 6</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter-list">
+                                <h3>Freshness</h3>
+                                <ul>
+                                    <li>
+                                        <label for="1Day">
+                                            <input type="checkbox" id="1Day" class="filter" /> 1 Day
+                                            old
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="3Day">
+                                            <input type="checkbox" id="3Day" class="filter" /> 3 Day
+                                            old
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="5Day">
+                                            <input type="checkbox" id="5Day" class="filter" /> 5 Day
+                                            old
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="7Day">
+                                            <input type="checkbox" id="7Day" class="filter" /> 7 Day
+                                            old
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="10Day">
+                                            <input type="checkbox" id="10Day" class="filter" /> 10
+                                            Day old
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="1Month">
+                                            <input type="checkbox" id="1Month" class="filter" /> 1
+                                            Month Old
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row list-search-view" id="">
+                        <div class="col-md-4">
+                            <div class="min-f-box">
+                                <div class="img-f-b">
+                                    <a href="/Website/PropertyDetails">
+                                        <img src="/images/f-p1.png" alt="" class="img-fluid" />
+                                    </a>
+                                    <span class="tag-l">For Sale</span>
+                                </div>
+                                <div class="f-cont-f">
+                                    <h3><a href="/Website/PropertyDetails">Buffalo Valley Path, Monument</a></h3>
+                                    <ul class="img-map-co">
+                                        <li>
+                                            <img src="/images/map.png" alt="" class="map-i" />
+                                            Virginia drive temple hills
+                                        </li>
+                                        <li>
+                                            <img src="/images/clock.png" alt="" class="map-i" />
+                                            10 days ago
+                                        </li>
+                                    </ul>
+                                    <h3 class="price-m"><i class="fa fa-inr"></i>230.00/<span>Month</span></h3>
+                                    <ul class="amini-con">
+                                        <li>
+                                            <img src="/images/b-bed.png" alt="" class="icon-ami" /><br />
+                                            Bed 1
+                                        </li>
+                                        <li>
+                                            <img src="/images/b-bat.png" alt="" class="icon-ami" /><br />
+                                            Bath 2
+                                        </li>
+                                        <li>
+                                            <img src="/images/b-s.png" alt="" class="icon-ami" /><br />
+                                            sqft 145m
+                                        </li>
+                                        <li>
+                                            <img src="/images/b-g.png" alt="" class="icon-ami" /><br />
+                                            Garage 1
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="detail-b">
+                                    <a href="/Website/PropertyDetails" class="see-det">
+                                        See Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-f-box">
+                                <div class="img-f-b">
+                                    <a href="/Website/PropertyDetails">
+                                        <img src="/images/f-p2.png" alt="" class="img-fluid" />
+                                    </a>
+                                    <span class="tag-l">For Sale</span>
+                                </div>
+                                <div class="f-cont-f">
+                                    <h3><a href="/Website/PropertyDetails">Modern Family Home</a></h3>
+                                    <ul class="img-map-co">
+                                        <li>
+                                            <img src="/images/map.png" alt="" class="map-i" />
+                                            Virginia drive temple hills
+                                        </li>
+                                        <li>
+                                            <img src="/images/clock.png" alt="" class="map-i" />
+                                            10 days ago
+                                        </li>
+                                    </ul>
+                                    <h3 class="price-m"><i class="fa fa-inr"></i>230.00/<span>Month</span></h3>
+                                    <ul class="amini-con">
+                                        <li>
+                                            <img src="/images/b-bed.png" alt="" class="icon-ami" /><br />
+                                            Bed 1
+                                        </li>
+                                        <li>
+                                            <img src="/images/b-bat.png" alt="" class="icon-ami" /><br />
+                                            Bath 2
+                                        </li>
+                                        <li>
+                                            <img src="/images/b-s.png" alt="" class="icon-ami" /><br />
+                                            sqft 145m
+                                        </li>
+                                        <li>
+                                            <img src="/images/b-g.png" alt="" class="icon-ami" /><br />
+                                            Garage 1
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="detail-b">
+                                    <a href="/Website/PropertyDetails" class="see-det">
+                                        See Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-f-box">
+                                <div class="img-f-b">
+                                    <a href="/Website/PropertyDetails">
+                                        <img src="/images/f-p3.png" alt="" class="img-fluid" />
+                                    </a>
+                                    <span class="tag-l">For Sale</span>
+                                </div>
+                                <div class="f-cont-f">
+                                    <h3><a href="/Website/PropertyDetails">Family home in Glasgow</a></h3>
+                                    <ul class="img-map-co">
+                                        <li>
+                                            <img src="/images/map.png" alt="" class="map-i" />
+                                            Virginia drive temple hills
+                                        </li>
+                                        <li>
+                                            <img src="/images/clock.png" alt="" class="map-i" />
+                                            10 days ago
+                                        </li>
+                                    </ul>
+                                    <h3 class="price-m"><i class="fa fa-inr"></i>230.00/<span>Month</span></h3>
+                                    <ul class="amini-con">
+                                        <li>
+                                            <img src="/images/b-bed.png" alt="" class="icon-ami" /><br />
+                                            Bed 1
+                                        </li>
+                                        <li>
+                                            <img src="/images/b-bat.png" alt="" class="icon-ami" /><br />
+                                            Bath 2
+                                        </li>
+                                        <li>
+                                            <img src="/images/b-s.png" alt="" class="icon-ami" /><br />
+                                            sqft 145m
+                                        </li>
+                                        <li>
+                                            <img src="/images/b-g.png" alt="" class="icon-ami" /><br />
+                                            Garage 1
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="detail-b">
+                                    <a href="/Website/PropertyDetails" class="see-det">
+                                        See Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-f-box">
+                                <div class="img-f-b">
+                                    <a href="/Website/PropertyDetails">
+                                        <img src="/images/f-p3.png" alt="" class="img-fluid" />
+                                    </a>
+                                    <span class="tag-l">For Sale</span>
+                                </div>
+                                <div class="f-cont-f">
+                                    <h3><a href="/Website/PropertyDetails">Apartment in Cecil Lake</a></h3>
+                                    <ul class="img-map-co">
+                                        <li>
+                                            <img src="/images/map.png" alt="" class="map-i" />
+                                            Virginia drive temple hills
+                                        </li>
+                                        <li>
+                                            <img src="/images/clock.png" alt="" class="map-i" />
+                                            10 days ago
+                                        </li>
+                                    </ul>
+                                    <h3 class="price-m"><i class="fa fa-inr"></i>230.00/<span>Month</span></h3>
+                                    <ul class="amini-con">
+                                        <li>
+                                            <img src="/images/b-bed.png" alt="" class="icon-ami" /><br />
+                                            Bed 1
+                                        </li>
+                                        <li>
+                                            <img src="/images/b-bat.png" alt="" class="icon-ami" /><br />
+                                            Bath 2
+                                        </li>
+                                        <li>
+                                            <img src="/images/b-s.png" alt="" class="icon-ami" /><br />
+                                            sqft 145m
+                                        </li>
+                                        <li>
+                                            <img src="/images/b-g.png" alt="" class="icon-ami" /><br />
+                                            Garage 1
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="detail-b">
+                                    <a href="/Website/PropertyDetails" class="see-det">
+                                        See Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-f-box">
+                                <div class="img-f-b">
+                                    <a href="/Website/PropertyDetails">
+                                        <img src="/images/f-p5.png" alt="" class="img-fluid" />
+                                    </a>
+                                    <span class="tag-l">For Sale</span>
+                                </div>
+                                <div class="f-cont-f">
+                                    <h3><a href="/Website/PropertyDetails">Office Space in Thatcham</a></h3>
+                                    <ul class="img-map-co">
+                                        <li>
+                                            <img src="/images/map.png" alt="" class="map-i" />
+                                            Virginia drive temple hills
+                                        </li>
+                                        <li>
+                                            <img src="/images/clock.png" alt="" class="map-i" />
+                                            10 days ago
+                                        </li>
+                                    </ul>
+                                    <h3 class="price-m"><i class="fa fa-inr"></i>230.00/<span>Month</span></h3>
+                                    <ul class="amini-con">
+                                        <li>
+                                            <img src="/images/b-bed.png" alt="" class="icon-ami" /><br />
+                                            Bed 1
+                                        </li>
+                                        <li>
+                                            <img src="/images/b-bat.png" alt="" class="icon-ami" /><br />
+                                            Bath 2
+                                        </li>
+                                        <li>
+                                            <img src="/images/b-s.png" alt="" class="icon-ami" /><br />
+                                            sqft 145m
+                                        </li>
+                                        <li>
+                                            <img src="/images/b-g.png" alt="" class="icon-ami" /><br />
+                                            Garage 1
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="detail-b">
+                                    <a href="/Website/PropertyDetails" class="see-det">
+                                        See Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-f-box">
+                                <div class="img-f-b">
+                                    <a href="/Website/PropertyDetails">
+                                        <img src="/images/f-p6.png" alt="" class="img-fluid" />
+                                    </a>
+                                    <span class="tag-l">For Sale</span>
+                                </div>
+                                <div class="f-cont-f">
+                                    <h3><a href="/Website/PropertyDetails">Luxury Villa in Birmingham</a></h3>
+                                    <ul class="img-map-co">
+                                        <li>
+                                            <img src="/images/map.png" alt="" class="map-i" />
+                                            Virginia drive temple hills
+                                        </li>
+                                        <li>
+                                            <img src="/images/clock.png" alt="" class="map-i" />
+                                            10 days ago
+                                        </li>
+                                    </ul>
+                                    <h3 class="price-m"><i class="fa fa-inr"></i>230.00/<span>Month</span></h3>
+                                    <ul class="amini-con">
+                                        <li>
+                                            <img src="/images/b-bed.png" alt="" class="icon-ami" /><br />
+                                            Bed 1
+                                        </li>
+                                        <li>
+                                            <img src="/images/b-bat.png" alt="" class="icon-ami" /><br />
+                                            Bath 2
+                                        </li>
+                                        <li>
+                                            <img src="/images/b-s.png" alt="" class="icon-ami" /><br />
+                                            sqft 145m
+                                        </li>
+                                        <li>
+                                            <img src="/images/b-g.png" alt="" class="icon-ami" /><br />
+                                            Garage 1
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="detail-b">
+                                    <a href="/Website/PropertyDetails" class="see-det">
+                                        See Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pagination">
+                        <div class="col-md-12">
+                            <div class="pagenum">
+                                <ul>
+                                    <li class="active">
+                                        <a href="#">1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">3</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">4</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">5</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

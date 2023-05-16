@@ -1,0 +1,118 @@
+﻿@model ApnaKutumbh.Models.Website
+
+@{
+    ViewBag.Title = "ContactUs";
+    Layout = "~/Views/Shared/WebsiteLayout.cshtml";
+}
+
+<div class="minsection">
+    <div class="sub-banner pt-90 pb-90">
+        <div class="container">
+            <div class="col-md-8  offset-md-2">
+                <div class="text-center text-line">
+                    <h1>Contact Us</h1>
+                    <ul class="text-c">
+                        <li>Home</li>
+                        <li>|</li>
+                        <li class="color-t">Contact Us</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="pt-90 pb-90 contact-page-det bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="contact-page">
+                        <div class="heading-t  fadeInUp animated">
+                            <h2>Contact Us</h2>
+                            <p>Reach Out to us for any Inquiry</p>
+                        </div>
+                        <div class="comment-re post-com">
+                            <form class="row" action=""
+                                  method="POST">
+                                <div class="form-group col-md-6">
+                                    <input type="text" placeholder="Name" name="Name" class="form-control form-com">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="email" placeholder="Email" name="Email"
+                                           class="form-control form-com">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="number" maxlength="10" placeholder="Mobile" name="Mobile"
+                                           class="form-control form-com">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="text" placeholder="Subject" name="Subject"
+                                           class="form-control form-com">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <textarea placeholder="Message" name="Message"
+                                              class="form-control form-com-message "></textarea>
+                                </div>
+                                <div class="col-md-12">
+                                    <button class="animation-cer-btn" id="my-form-button">
+                                        Send Message<span class="line2"></span>
+                                    </button>
+                                    <p id="my-form-status-contact"></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 pl-80">
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.6810298557834!2d81.01384297539695!3d26.850095762778718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be2e5b62ee18b%3A0xde6b8610c08cc080!2s2nd%20floor%2C%201%2F210%2C%20Vineet%20Khand%2C%20Gomti%20Nagar%2C%20Lucknow%2C%20Uttar%20Pradesh%20226010!5e0!3m2!1sen!2sin!4v1683617039489!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pt-60 pb-60 gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="add-con">
+                        <span>
+                            <img src="/images/b-mail.png" alt="" class="img-fluid" />
+                        </span>
+                        <ul>
+                            <li>
+                                <a href="/cdn-cgi/l/email-protection" class="text-dark">
+                                    apnakutumbh@gmail.com
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="add-con">
+                        <span>
+                            <img src="/images/b-call.png" alt="" class="img-fluid" />
+                        </span>
+                        <ul>
+                            <li>077158 79666</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="add-con">
+                        <span>
+                            <img src="/images/b-map.png" alt="" class="img-fluid" />
+                        </span>
+                        <ul>
+                            <li>
+                                2nd floor 1/210, vineet khand, Gomtinagar, <br />Lucknow, India, Uttar Pradesh
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="js/footer.js"></script>

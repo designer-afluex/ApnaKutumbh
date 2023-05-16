@@ -1,0 +1,1278 @@
+﻿@model ApnaKutumbh.Models.Website
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/WebsiteLayout.cshtml";
+}
+
+<div class="minsection">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide cover-background" style="background-image:url(/images/banner1.png)">
+            </div>
+            <div class="swiper-slide cover-background" style="background-image:url(/images/banner2.png)">
+            </div>
+            <div class="swiper-slide cover-background" style="background-image:url(/images/banner3.png)">
+            </div>
+        </div>
+        <div class="po-ab-se">
+            <div class="container">
+                <div class="content-slider">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <img src="/images/banner_img.png" class="banner_img" />
+                        </div>
+                        <div class="col-lg-6">
+                            <h1 class="text-white text-left banner_heading">
+                                करे अपने करियर की शुरुआत
+                                <span class="badge badge-primary banner_text"> Apana Kutumbh </span>
+                                के साथ <br /> आज ही <span class="badge badge-primary banner_text"> Real Estate Agent </span> &nbsp;बनकर अपने सपनों को पूरा करें |
+                            </h1>
+                            <a href="/Home/ContactUs" class="architact-btn">
+                                Contact with us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    <section class="pt-90 about-text bg-white">
+        <div class="container mt-4">
+            <div class="row justify-content-center mt-50">
+                <div class="col-lg-12 text-center mb-40">
+                    <h1>Search Your Next Home</h1>
+                    <h4>Find new & featured property located in your local city.</h4>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 pt-15" style="border: 1px solid gainsboro;">
+                    <div class="full_search_box">
+                        <div class="search_hero_wrapping">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-3 col-sm-12">
+                                    <div class="form-group">
+                                        <label>City/Street</label>
+                                        <div class="input-with-icon">
+                                            <select id="location" class="form-control">
+                                                <option value="">&nbsp;</option>
+                                                <option value="1">New York City</option>
+                                                <option value="2">Honolulu, Hawaii</option>
+                                                <option value="3">California</option>
+                                                <option value="4">New Orleans</option>
+                                                <option value="5">Washington</option>
+                                                <option value="6">Charleston</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-12">
+                                    <div class="form-group">
+                                        <label>Property Type</label>
+                                        <div class="input-with-icon">
+                                            <select id="ptypes" class="form-control">
+                                                <option value="">&nbsp;</option>
+                                                <option value="1">All categories</option>
+                                                <option value="2">Apartment</option>
+                                                <option value="3">Villas</option>
+                                                <option value="4">Commercial</option>
+                                                <option value="5">Offices</option>
+                                                <option value="6">Garage</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <div class="form-group none">
+                                        <label>Price Range</label>
+                                        <div class="input-with-icon">
+                                            <select id="price" class="form-control">
+                                                <option value="">&nbsp;</option>
+                                                <option value="1">From 40,000 To 10m</option>
+                                                <option value="2">From 60,000 To 20m</option>
+                                                <option value="3">From 70,000 To 30m</option>
+                                                <option value="3">From 80,000 To 40m</option>
+                                                <option value="3">From 90,000 To 50m</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-2 col-sm-12 small-padd">
+                                    <div class="form-group none">
+                                        <a href="#" class="btn search-btn">GO!</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pt-90 pb-90 about-text bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pt-60">
+                    <div class="text-con">
+                        <h3>
+                            Why Apna Kutumbh ?
+                        </h3>
+                        <p>
+                            It is an online forum where buyers, sellers and brokers/agents can exchange information
+                            about real estate properties quickly, effectively and inexpensively. you can advertise a
+                            property, search for a property, browse through properties, build your own property
+                            microsite, and keep yourself updated with the latest news and trends making headlines in
+                            the realty sector.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3  pt-60 pl-50 spc-ab">
+                    <div class="text-con-to">
+                        <h3>Our Specialization</h3>
+                        <div class="min-so">
+                            <div class="min-cont-to">
+                                <span>
+                                    <img src="/images/mansion.png" alt="apna kutumbh" />
+                                </span>
+                                <h3>APNA KUTUMB</h3>
+                            </div>
+                            <div class="min-cont-to">
+                                <span>
+                                    <img src="/images/secure.png" alt="suraksha" />
+                                </span>
+                                <h3>SURAKSHA</h3>
+                            </div>
+                            <div class="min-cont-to">
+                                <span>
+                                    <img src="/images/call-center-agent.png" alt="sahyog" />
+                                </span>
+                                <h3>SAHYOG</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 pl-30 pt-15">
+                    <img src="/images/f-p1.png" alt="" class="img-fluid" />
+                    <!-- <div class="min-ab-img">
+                        <div class="r-about-img">
+                            <img src="/images/ab-top.png" alt="" class="img-fluid" />
+                        </div>
+                        <div class="min-top-i">
+                            <img src="/images/se-2.png" alt="" class="img-fluid" />
+                        </div>
+                        <button class="play"><i class="fa fa-play"></i></button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="pt-90 type-pd bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pr-70">
+                    <div class="heading-con-sm">
+                        <h3>
+                            Explore <br />
+                            by Property Type
+                        </h3>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                            has been the industry's
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-8 min-sec-ty pl-0">
+                    <div class="row">
+                        <div class="col-md-4 pl-5 pr-5 min-type">
+                            <div class="min-type-t">
+                                <img src="/images/r-type1.png" alt="house rent" />
+                                <span class="min-t">
+                                    <a href="#" class="bg-black">
+                                        House Rent
+                                    </a>
+                                    <a href="#" class="po-ab-click">
+                                        <img src="/images/right-arrow.png" alt="" class="po-l ho-h" />
+                                        <img src="/images/right-arrow-o.png" alt="" class="po-l so-ho" />
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-4 pl-5 pr-5 min-type">
+                            <div class="min-type-t">
+                                <img src="/images/r-type2.png" alt="private house" />
+                                <span class="min-t">
+                                    <a href="#" class="bg-black">
+                                        Private House
+                                    </a>
+                                    <a href="#" class="po-ab-click">
+                                        <img src="/images/right-arrow.png" alt="" class="po-l ho-h" />
+                                        <img src="/images/right-arrow-o.png" alt="" class="po-l so-ho" />
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-4 pl-5 pr-5 min-type">
+                            <div class="min-type-t">
+                                <img src="/images/r-type3.png" alt="villa" />
+                                <span class="min-t">
+                                    <a href="#" class="bg-black">
+                                        Villa
+                                    </a>
+                                    <a href="#" class="po-ab-click">
+                                        <img src="/images/right-arrow.png" alt="" class="po-l ho-h" />
+                                        <img src="/images/right-arrow-o.png" alt="" class="po-l so-ho" />
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="pt-90 pb-60 pop-pro pop-pro-mar bg-white">
+        <div class="container">
+            <div class="row mb-40">
+                <div class="col-md-5">
+                    <div class="heading-t  fadeInUp animated">
+                        <h2>Popular Properties</h2>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="tab-con">
+                        <ul class="nav nav-pills" role="tablist">
+                            <li class="nav-item">
+                                <a class="pointer nav-link active" id="pills-all-tab" data-toggle="pill"
+                                   href="#pills-all" role="tab" aria-controls="pills-all"
+                                   aria-selected="true">all</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="pointer nav-link" id="pills-apartment-tab" data-toggle="pill"
+                                   href="#pills-apartment" role="tab" aria-controls="pills-apartment"
+                                   aria-selected="false">apartment</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="pointer nav-link" id="pills-house-tab" data-toggle="pill"
+                                   href="#pills-house" role="tab" aria-controls="pills-house"
+                                   aria-selected="true">house</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="pointer nav-link" id="pills-office-tab" data-toggle="pill"
+                                   href="#pills-office" role="tab" aria-controls="pills-office"
+                                   aria-selected="true">office</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="pointer nav-link" id="pills-homes-tab" data-toggle="pill"
+                                   href="#pills-homes" role="tab" aria-controls="pills-homes"
+                                   aria-selected="true">homes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="pointer nav-link" id="pills-villa-tab" data-toggle="pill"
+                                   href="#pills-villa" role="tab" aria-controls="pills-villa"
+                                   aria-selected="true">villa</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content p-0 shadow-none" id="pills-tabContent">
+                <div class="tab-pane fade active show" id="pills-all" role="tabpanel"
+                     aria-labelledby="pills-all-tab">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f1.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Villa on Hollywood Boulevard</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f2.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Rent</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Buffalo Valley Path, Monument</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f3.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Coral Ridge Colorado Springs</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f4.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Whileaway Ct, Colorado Springs</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f5.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Alberta Falls Way</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f6.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Jouflas Ranch Road Wolcott, CO</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-apartment" role="tabpanel"
+                     aria-labelledby="pills-apartment-tab">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f2.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Bridgehampton, NY, 11932 United States</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f3.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Renovated Apartment</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f1.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Luxury Family Home</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f4.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Gorgeous Villa Bay View</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f5.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Comfortable Villa in Green</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f6.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Selway Apartments</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade " id="pills-house" role="tabpanel" aria-labelledby="pills-house-tab">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f2.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">House on the Hollywood</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f1.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">House on the beverly hills</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f3.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Gorgeous Villa Bay View</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f4.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Home in Metric Way</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f5.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Garden Gingerbread House</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f6.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Affordable Urban House</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade " id="pills-office" role="tabpanel" aria-labelledby="pills-office-tab">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f3.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Explore Old Barcelona</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f1.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Renovated Luxury Apartment</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f2.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Old Town Manchester</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f4.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Resot Relly Market, Montreal Canada</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f5.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">New Green Garden, Huwai Denever USA</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f6.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Red Reveals Market, Montreal Canada</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade " id="pills-homes" role="tabpanel" aria-labelledby="pills-homes-tab">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f5.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Shine Sehu Street, Liverpool</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f1.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Green Glelcer Street, Barghimbar USA</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f2.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Family home in Glasgow</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f3.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Apartment in Cecil Lake</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f4.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Bay view Apartment</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f6.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Office Space in Thatcham</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade " id="pills-villa" role="tabpanel" aria-labelledby="pills-villa-tab">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f6.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Luxury Villa in Birmingham</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f2.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Luxury Condo in Mariwood</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f3.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Villa on Sunbury</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f4.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Villa on Hartford</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f5.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Relaxing Apartment</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="min-pro-box">
+                                <a href="#">
+                                    <img src="/images/f6.png" alt="" class="bg-pro-i" />
+                                </a>
+                                <span class="tag-l">For Sale</span>
+                                <div class="min-box-t">
+                                    <h3>$1.34.00</h3>
+                                    <h3><a href="#">Modern Family Home</a></h3>
+                                    <ul class="min-f-img">
+                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="pt-90 pb-90 pofocus bg-white">
+        <div class="container">
+            <div class="row mb-40">
+                <div class="col-md-8 offset-2">
+                    <div class="heading">
+                        <h2>
+                            Our Main Focus
+                        </h2>
+                        <p>
+                            Apna Kutumbh is an online forum where buyers, sellers and brokers/agents can exchange
+                            information about real estate properties quickly, effectively and inexpensively.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 pl-40 pr-40">
+                    <div class="min-foc">
+                        <span class="img-f">
+                            <img src="/images/buy-home.png" alt="" class="img-fluid" />
+                        </span>
+                        <h3>Buy a home</h3>
+                        <p>
+                            There's no "right" age to buy a home, but it's smart to evaluate where you are in life as
+                            you decide whether or not to buy.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 pl-40 pr-40">
+                    <div class="min-foc">
+                        <span class="img-f">
+                            <img src="/images/house.png" alt="" class="img-fluid" />
+                        </span>
+                        <h3>Rent a home</h3>
+                        <p>Search for houses for rent on Apna Kutumbh for a wide range of properties and prices.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 pl-40 pr-40">
+                    <div class="min-foc">
+                        <span class="img-f">
+                            <img src="/images/sale-min.png" alt="" class="img-fluid" />
+                        </span>
+                        <h3>Sell a home</h3>
+                        <p>A real estate agent handles many aspects of selling your home for you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pt-90 pb-90 change">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-11 mar-auto">
+                    <div class="min-change mb-60">
+                        <h2>
+                            We Are Changing The Real Estate<br />
+                            Industry With Progression And Passion.
+                        </h2>
+                        <h4>
+                            We try and be the main self-governing property corporation in the places we cover,
+                            <br />providing an entirely personal and committed provider.
+                        </h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 pl-5-im">
+                            <div class="min-box-ch">
+                                <span class="num">01</span>
+                                <span class="po-i-c">
+                                    <img src="/images/a-1.png" alt="" class="img-fluid" />
+                                </span>
+                                <h3>
+                                    Trusted
+                                </h3>
+                                <p>Believe in our service & Care</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 pl-5-im">
+                            <div class="min-box-ch">
+                                <span class="num">02</span>
+                                <span class="po-i-c">
+                                    <img src="/images/a-1.png" alt="" class="img-fluid" />
+                                </span>
+                                <h3>
+                                    24/7 Support
+                                </h3>
+                                <p>We are available 24/7 hours.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 pl-5-im">
+                            <div class="min-box-ch">
+                                <span class="num">03</span>
+                                <span class="po-i-c">
+                                    <img src="/images/a-3.png" alt="" class="img-fluid" />
+                                </span>
+                                <h3>
+                                    Financing Easy
+                                </h3>
+                                <p>Believe in our service & Care</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 pl-5-im">
+                            <div class="min-box-ch">
+                                <span class="num">04</span>
+                                <span class="po-i-c">
+                                    <img src="/images/a-4.png" alt="" class="img-fluid" />
+                                </span>
+                                <h3>
+                                    Wide Range House
+                                </h3>
+                                <p>Believe in our service & Care</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pt-90 pb-90 test-mo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="min-test-text">
+                        <h2>
+                            What Our Clients <br />
+                            are Saying
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row pd-5-so mt-4">
+                <div id="owl-demo5" class="owl-demo-test-4 owl-carousel owl-theme pl-20 pr-20">
+                    <div class="item">
+                        <div class="min-text-us">
+                            <div class="con-text">
+                                <p>
+                                    I want to thank my RM for her support in closing the deal with a prospect from
+                                    Apna Kutumbh, We are
+                                    very happy to say that you are very helpful.
+                                </p>
+                            </div>
+                            <div class="user-test">
+                                <span>
+                                    <img src="/images/user.png" alt="" class="img-fluid" />
+                                </span>
+                                <div class="ri-test">
+                                    <h4>Brianna Stapleton</h4>
+                                    <p>Co-founder</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="min-text-us">
+                            <div class="con-text">
+                                <p>
+                                    I had posted my property details for rent in Apna Kutumbh. I promptly got many
+                                    requests and could tie up one also. I am very pleased with their services.
+                                </p>
+                            </div>
+                            <div class="user-test">
+                                <span>
+                                    <img src="/images/user.png" alt="" class="img-fluid" />
+                                </span>
+                                <div class="ri-test">
+                                    <h4>Anadson steve</h4>
+                                    <p>interior Designer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="min-text-us">
+                            <div class="con-text">
+                                <p>
+                                    Your dedication, understanding, and time all mean so much to me, and I feel very
+                                    lucky to be able to experience you support and alongside you.
+                                </p>
+                            </div>
+                            <div class="user-test">
+                                <span>
+                                    <img src="/images/user.png" alt="" class="img-fluid" />
+                                </span>
+                                <div class="ri-test">
+                                    <h4>Karen Paran</h4>
+                                    <p>Office Manager</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="min-text-us">
+                            <div class="con-text">
+                                <p>
+                                    What's more! You get an exclusive RM from Apna Kutumbh team who tracks your
+                                    property closely and take it to closure.
+                                </p>
+                            </div>
+                            <div class="user-test">
+                                <span>
+                                    <img src="/images/user.png" alt="" class="img-fluid" />
+                                </span>
+                                <div class="ri-test">
+                                    <h4>Brandon Miller</h4>
+                                    <p>Co-founder</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="min-text-us">
+                            <div class="con-text">
+                                <p>
+                                    I had posted my property details for rent in Apna Kutumbh. I promptly got many
+                                    requests and could tie up one also. I am very pleased with their services.
+                                </p>
+                            </div>
+                            <div class="user-test">
+                                <span>
+                                    <img src="/images/user.png" alt="" class="img-fluid" />
+                                </span>
+                                <div class="ri-test">
+                                    <h4>Anadson steve</h4>
+                                    <p>interior Designer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- <section class="why-choose bg-white">
+        <div class="row ">
+            <div class="col-md-5 pd-0">
+                <div class="full-img ">
+                    <img src="/images/why.png" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-7 pt-50 pb-50 pl-70 pr-50">
+                <div class="right-text ">
+                    <h2>
+                        Why Choose Us ?
+                    </h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                </div>
+                <div class="min-s-list row pt-30">
+                    <div class="col-md-4">
+                        <div class="bg-sec-list mt-45">
+                            <span class="l-img">
+                                <img src="/images/house-for-sale.png" alt="">
+                            </span>
+                            <h3>Wide Renge</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur pro adipisici consectetur</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="bg-sec-list bg-blue">
+                            <span class="l-img">
+                                <img src="/images/trust.png" alt="">
+                            </span>
+                            <h3>Trusted</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur pro adipisici consectetur</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="bg-sec-list mt-45">
+                            <span class="l-img">
+                                <img src="/images/money.png" alt="">
+                            </span>
+                            <h3>Easy Financing</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur pro adipisici consectetur</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
+
+    <section class="pt-70 pb-30 app-d">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="app-img">
+                        <img src="/images/app-screen.png" alt="" class="img-fluid" />
+                    </div>
+                </div>
+                <div class="col-md-7 pl-70 pt-60">
+                    <div class="app-con">
+                        <h2>
+                            Download Our App<br />
+                            Android and IOS App for Experience
+                        </h2>
+                        <p>Download our app and you can buy or sell homes, villa and others using the app on your mobile.</p>
+                        <ul class="app-img-f">
+                            <li>
+                                <a href="#">
+                                    <img src="/images/g-pl.png" alt="" class="img-fluid" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/images/i-pl.png" alt="" class="img-fluid" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
