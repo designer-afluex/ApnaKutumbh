@@ -61,6 +61,7 @@ namespace ApnaKutumbh.Models
 
         public DataTable dtPLCCharge { get; set; }
         public List<Master> lstPLC { get; set; }
+       
         public List<Master> lstSite { get; set; }
         public List<Master> lstPlot { get; set; }
         public List<SelectListItem> lstBlock { get; set; }
@@ -74,6 +75,9 @@ namespace ApnaKutumbh.Models
         public string Pk_ContactId { get; set; }
         public string Address { get; set; }
         public string File { get; set; }
+        public string File1 { get; set; }
+        public string File2 { get; set; }
+        public string File3 { get; set; }
         public List<Master> lstContact { get; set; }
 
 
@@ -123,7 +127,7 @@ namespace ApnaKutumbh.Models
         }
         public DataSet SaveSite()
         {
-            SqlParameter[] para = { new SqlParameter("@SitePlcCharge", dtPLCCharge),
+            SqlParameter[] para = {new SqlParameter("@SitePlcCharge", dtPLCCharge),
                                       new SqlParameter("@SiteName", SiteName),
                                       new SqlParameter("@Location", Location),
                                       new SqlParameter("@Rate", Rate),
@@ -131,8 +135,10 @@ namespace ApnaKutumbh.Models
                                       new SqlParameter("@DevelopmentCharge", DevelopmentCharge),
                                       new SqlParameter("@AddedBy", AddedBy),
                                       new SqlParameter("@FK_SiteTypeId", SiteTypeID),
-                                      new SqlParameter("@Image", File)
-                                      
+                                      new SqlParameter("@Image", File),
+                                      new SqlParameter("@Image1", File1),
+                                      new SqlParameter("@Image2", File2),
+                                      new SqlParameter("@Image3", File3)
             };
             DataSet ds = Connection.ExecuteQuery("SiteMaster", para);
             return ds;
@@ -148,7 +154,11 @@ namespace ApnaKutumbh.Models
                                       new SqlParameter("@UnitID", UnitID),
                                       new SqlParameter("@DevelopmentCharge", DevelopmentCharge),
                                       new SqlParameter("@UpdatedBy", AddedBy),
-                                      new SqlParameter("@FK_SiteTypeID", SiteTypeID)
+                                      new SqlParameter("@FK_SiteTypeID", SiteTypeID),
+                                      new SqlParameter("@Image", File),
+                                      new SqlParameter("@Image1",File1),
+                                      new SqlParameter("@Image2",File2),
+                                      new SqlParameter("@Image3",File3)
 
             };
             DataSet ds = Connection.ExecuteQuery("UpdateSite", para);
@@ -628,6 +638,9 @@ namespace ApnaKutumbh.Models
         public string PK_GalleryID { get; set; }
         public string SiteImage { get; set; }
 
+        public string SiteImage1 { get; set; }
+        public string SiteImage2 { get; set; }
+        public string SiteImage3 { get; set; }
 
 
         public DataSet GetGallery()
@@ -911,7 +924,9 @@ namespace ApnaKutumbh.Models
             return ds;
         }
 
-        
+
+       
+
 
     }
 }

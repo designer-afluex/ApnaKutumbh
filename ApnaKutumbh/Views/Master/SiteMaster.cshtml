@@ -5,6 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 <style>
     .input-file-row-1:after {
         content: ".";
@@ -67,38 +68,127 @@
 
 
     input[type="file"] {
-  display: block;
-}
-.imageThumb {
-  max-height: 75px;
-  border: 2px solid;
-  padding: 1px;
-  cursor: pointer;
-}
-.pip {
-  display: inline-block;
-  margin: 10px 10px 0 0;
-}
-.remove {
-  display: block;
-  background: #444;
-  border: 1px solid black;
-  color: white;
-  text-align: center;
-  cursor: pointer;
-}
-.remove:hover {
-  background: white;
-  color: black;
-}
+        display: block;
+    }
+
+    .imageThumb {
+        max-height: 75px;
+        border: 2px solid;
+        padding: 1px;
+        cursor: pointer;
+    }
+
+    .pip {
+        display: inline-block;
+        margin: 10px 10px 0 0;
+    }
+
+    .remove {
+        display: block;
+        background: #444;
+        border: 1px solid black;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+    }
+
+        .remove:hover {
+            background: white;
+            color: black;
+        }
+
+    #divload {
+        display: none;
+    }
 
 
+    img {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        width: 50px;
+    }
+    input[type='file'] {
+  color: transparent;
+}
+    .upload__box {
+        padding: 40px;
+    }
+    .upload__inputfile {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+    }
+    .upload__btn {
+        display: inline-block;
+        font-weight: 600;
+        color: #fff;
+        text-align: center;
+        min-width: 116px;
+        padding: 5px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: 2px solid;
+        background-color: #4045ba;
+        border-color: #4045ba;
+        border-radius: 22px;
+        line-height: 26px;
+        font-size: 14px;
+    }
+
+        .upload__btn:hover {
+            background-color: unset;
+            color: #4045ba;
+            transition: all 0.3s ease;
+        }
+
+    .upload__btn-box {
+        margin-bottom: 10px;
+    }
+
+    .upload__img-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -10px;
+    }
+
+    .upload__img-box {
+        width: 93px;
+        padding: 0 10px;
+        margin-bottom: 12px;
+    }
+
+    .upload__img-close {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        text-align: center;
+        line-height: 24px;
+        z-index: 1;
+        cursor: pointer;
+    }
+
+        .upload__img-close:after {
+            content: '\2716';
+            font-size: 14px;
+            color: white;
+        }
+
+    .img-bg {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        padding-bottom: 100%;
+    }
 </style>
-
-
-
-
-
 
 
 @using (Html.BeginForm("SiteMaster", "Master", FormMethod.Post, new { @id = "form1" }))
@@ -152,94 +242,131 @@
 
                             </div>
 
-                            <div class="input-field col m6 s12">
-                                <output id='result' />                             
-                            </div>
+
                         </div>
+
+                        <div class="row">
+                            @if (Model.SiteID == null)
+                            {
+                                <div class="input-field col m6 s12">
+                                    <output id='result' />
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="input-field col m6 s12 a1">
+                                    <span class="imgfluid">
+                                        <img src="~/KYCDocuments/@Model.SiteImage" />
+                                        <img src="~/KYCDocuments/@Model.SiteImage1" />
+                                        <img src="~/KYCDocuments/@Model.SiteImage2" />
+                                        <img src="~/KYCDocuments/@Model.SiteImage3" />
+                                    </span>
+                                </div>
+                            }
+                        </div>
+
+                     
+                            <div class="form-group row">
+                                @*<div class="col-sm-12">
+                                    <h3>Upload your images  </h3>
+                                    <input type="file" id="files" name="files[]"  multiple />                           
+                                </div>*@
+
+
+                                <div class="upload__box">
+                                    <div class="upload__btn-box">
+                                        <label class="upload__btn">
+                                            <span>Upload images</span>
+                                            <input type="file" multiple="" data-max_length="3" class="upload__inputfile" id="file">
+                                        </label>
+                                    </div>
+                                    <div class="upload__img-wrap"></div>
+                                </div> 
+
+                            </div>
+
+                        
+                     
                         <div class="form-group row">
-                            <div class="col-sm-12">                         
-                                <h3>Upload your images</h3>
-                                @*<input type="file" id="files" name="files[]" multiple />*@
-                                @Html.TextBoxFor(m => m.File, new { @class = "form-control",@type="file",@name= "files[]" })
-                            </div>
-                        </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-12">
-                                        <div class="table-responsive">
-                                            <table class="table table-bordered table-md" style="width:100%;">
-                                                <thead>
-                                                    <tr>
-                                                        <th>S No.</th>
-                                                        <th>PLC Name</th>
-                                                        <th>Charges(%)</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @if (Model != null)
+                            <div class="col-sm-12">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-md" style="width:100%;">
+                                        <thead>
+                                            <tr>
+                                                <th>S No.</th>
+                                                <th>PLC Name</th>
+                                                <th>Charges(%)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if (Model != null)
                                             {
                                                 if (Model.lstPLC != null)
                                                 {
                                                     int i = 1;
                                                     foreach (var Item in Model.lstPLC)
                                                     {
-                                            <tr class="text-left">
-                                                <td>@i</td>
-                                                <td>@Item.PLCName</td>
-                                                <td>
-                                                    <input type="text" id="txtCharge_ @i" name="txtCharge_ @i" value="@Item.PLCCharge" onkeypress="return isNumberOrDecimal(event);" maxlength="12" />%
-                                                    <input type="hidden" id="hdPLCID_ @i" name="hdPLCID_ @i" value="@Item.PLCID" />
-                                                    @*@Html.TextBoxFor(m => m.PLCCharge, new { @class = "form-control", @Placeholder = "Charge", @onkeypress="return isNumberOrDecimal(event);" })*@
-                                                </td>
-                                            </tr>
+                                                        <tr class="text-left">
+                                                            <td>@i</td>
+                                                            <td>@Item.PLCName</td>
+                                                            <td>
+                                                                <input type="text" id="txtCharge_ @i" name="txtCharge_ @i" value="@Item.PLCCharge" onkeypress="return isNumberOrDecimal(event);" maxlength="12" />%
+                                                                <input type="hidden" id="hdPLCID_ @i" name="hdPLCID_ @i" value="@Item.PLCID" />
+                                                                @*@Html.TextBoxFor(m => m.PLCCharge, new { @class = "form-control", @Placeholder = "Charge", @onkeypress="return isNumberOrDecimal(event);" })*@
+                                                            </td>
+                                                        </tr>
                                                         i++;
                                                     }
-                                            <input type="hidden" id="hdRows" name="hdRows" value="@i" />
+                                                    <input type="hidden" id="hdRows" name="hdRows" value="@i" />
+
                                                 }
                                             }
-
-                                                </tbody>
-
-                                            </table>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="form-group row">
-
-                                    <div class="input-field col row-cols-lg-3">
-                                        Development Charge<span style="color:red">*</span>
-                                        @Html.TextBoxFor(m => m.DevelopmentCharge, new { @class = "form-control", @Placeholder = "Development Charge", @onkeypress = "return isNumberOrDecimal(event);" })
-                                        <span class="form-bar"></span>
-                                    </div>
-
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
-                            <br />
-                            <div class="form-group row">
 
-                                <div class="input-field col m6 s12">
-                                    @if (Model.SiteID == null)
-                        {
-                                        <input class="btn btn-success pull-left" type="submit" onclick="return validateform();" value="Save" id="btnSave" name="btnSave" />
-                                    }
-                                    else
-                                    {
-                                        @Html.HiddenFor(m => m.SiteID, new { @Value = @Model.SiteID })
-                                        <input class="btn btn-success pull-left" type="submit" onclick="return validateform();" value="Update" id="btnUpdate" name="btnUpdate" />
+                        </div>
 
-                                       
-                                    }
-                                    <a class="btn btn-info" href="/Master/SiteList" style="margin-left:5px">Back To List</a>
-                            
-                                </div>
-                                <input type="hidden" id="UserType" value="@Session["UserType"]" />
-                                <input type="hidden" id="UserTypeName" value="@Session["UserTypeName"]" />
+                        <div class="form-group row">
 
+                            <div class="input-field col row-cols-lg-3">
+                                Development Charge<span style="color:red">*</span>
+                                @Html.TextBoxFor(m => m.DevelopmentCharge, new { @class = "form-control", @Placeholder = "Development Charge", @onkeypress = "return isNumberOrDecimal(event);" })
+                                <span class="form-bar"></span>
                             </div>
 
                         </div>
                     </div>
+                    <br />
+                    <div class="form-group row">
+
+                        <div class="input-field col m6 s12">
+                            @if (Model.SiteID == null)
+                            {
+                                @*<input class="btn btn-success pull-left" type="submit" onclick="return validateform();" value="Save" id="btnSave" name="btnSave" />*@
+
+                                <input class="btn btn-success pull-left" type="submit" value="Save" id="btnSave" name="btnSave" />
+                            }
+                            else
+                            {
+                                @*@Html.HiddenFor(m => m.SiteID, new { @Value = @Model.SiteID })
+                                    <input class="btn btn-success pull-left" type="submit" onclick="return validateform          ();" value="Update" id="btnUpdate" name="btnUpdate" />*@
+
+
+                                @Html.HiddenFor(m => m.SiteID, new { @Value = @Model.SiteID })
+                                <input class="btn btn-success pull-left" type="submit" value="Update" id="btnUpdate" name="btnUpdate" />
+
+                            }
+                            <a class="btn btn-info" href="/Master/SiteList" style="margin-left:5px">Back To List</a>
+                        </div>
+                        <input type="hidden" id="UserType" value="@Session["UserType"]" />
+                        <input type="hidden" id="UserTypeName" value="@Session["UserTypeName"]" />
+
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 }
@@ -250,12 +377,119 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+
+
+<script>
+    $(document).ready(function () {
+        ImgUpload();
+    });
+
+    function ImgUpload() {
+        var imgWrap = "";
+        var imgArray = [];
+        var listItem = [];
+        $('.upload__inputfile').each(function () {
+            $(this).on('change', function (e) {
+                imgWrap = $(this).closest('.upload__box').find('.upload__img-wrap');
+                var maxLength = $(this).attr('data-max_length');
+
+                var files = e.target.files;
+                 listItem = e.target.files;
+                var filesArr = Array.prototype.slice.call(files);
+                var iterator = 0;
+                filesArr.forEach(function (f, index) {
+
+                    if (!f.type.match('image.*')) {
+                        return;  
+                    }
+
+                    if (imgArray.length > maxLength) {
+                        return false
+                    } else {
+                        var len = 0;
+                        for (var i = 0; i < imgArray.length; i++) {
+                            if (imgArray[i] !== undefined) {
+                                len++;
+                            }
+                        }
+                        if (len > maxLength) {
+                            return false;
+                        } else {
+                            imgArray.push(f);
+                            var reader = new FileReader();
+                            reader.onload = function (e) {
+                               var html = "<div class='upload__img-box'><div style='background-image: url(" + e.target.result + ")' data-number='" + $(".upload__img-close").length + "' data-file='" + f.name + "' class='img-bg'><div class='upload__img-close'></div></div></div>";
+                                imgWrap.append(html);
+                                iterator++;
+                            }
+                            reader.readAsDataURL(f);
+                            $(".imgfluid").remove();
+                        }
+                    }
+                    str(listItem);
+                });
+            });
+          
+        });
+
+        $('body').on('click', ".upload__img-close", function (e) {
+            var file = $(this).parent().data("file");
+            for (var i = 0; i < imgArray.length; i++) {
+                if (imgArray[i].name === file) {
+                    imgArray.splice(i, 1);
+                    break;
+                }
+            }
+            $(this).parent().parent().remove();
+        });
+    }
+
+    var dt = [];
+
+    var files0 = [];
+    var files1 = [];
+    var files2 = [];
+    var files3 = [];
+    var files4 = [];
+
+    function str(dt) {
+        var st = dt[0];
+        debugger;
+        $(dt).each(function (index, ele) {
+            debugger;
+
+            if (index == 0) {
+                files0 = ele;
+            } else if (index == 1) {
+                files1 = ele;
+            } else if (index == 2) {
+                files2 = ele;
+            } else if (index == 3) {
+                files3 = ele;
+            } else if (index == 4) {
+                //  $(".pip").remove();
+
+                //  $("#files").val("");
+              //  alert("Please select only 4 images!!");
+
+            }
+        });
+    }
+</script>
+
+
+
+
 <script>
     $(document).ready(function () {
         var UserType = $('#UserType').val();
         var UserTypeName = $('#UserTypeName').val();
+     //   location.reload();
+        $("#usercheck10").hide();
+       
         if (UserType == 'Admin' && UserTypeName != 'Admin' && UserTypeName != "") {
             GetMenuDetails();
+           
         }
     });
     function GetMenuDetails() {
@@ -283,7 +517,7 @@
                     }
                     debugger
                     if (obj[i].FormUpdate == true && $('#SiteID').val() != "") {
-                        $('#btnUpdate').show();
+                       // $('#btnUpdate').show();
 
                         $("#btnUpdate").removeAttr('disabled');
                     }
@@ -298,43 +532,43 @@
             }
         });
     }
-    function validateform() {
-        $("#divload").css({ 'display': '' });
-        $(".errortext").removeClass("errortext");
-        if ($('#SiteName').val() == '') {
-            $("#SiteName").addClass('errortext');
-            $('#SiteName').focus();
-            return false;
-        }
-        if ($('#SiteTypeID').val() == '0') {
-            $("#SiteTypeID").addClass('errortext');
-            $('#SiteTypeID').focus();
-            return false;
-        }
-        if ($('#Location').val() == '') {
-            $("#Location").addClass('errortext');
-            $('#Location').focus();
-            return false;
-        }
-        if ($('#Rate').val() == '') {
-            $("#Rate").addClass('errortext');
-            $('#Rate').focus();
-            return false;
-        }
-        if ($('#UnitID').val() == '0') {
-            $("#UnitID").addClass('errortext');
-            $('#UnitID').focus();
-            return false;
-        }
-        if ($('#DevelopmentCharge').val() == '') {
-            $("#DevelopmentCharge").addClass('errortext');
-            $('#DevelopmentCharge').focus();
-            return false;
-        }
-
-
-        return true;
-    }
+    //function validateform() {
+    //    var Isvalid = false;
+    //    $("#divload").css({ 'display': '' });
+    //    $(".errortext").removeClass("errortext");
+    //    if ($('#SiteName').val() == '') {
+    //        $("#SiteName").addClass('errortext');
+    //        $('#SiteName').focus();
+    //        return false;
+    //    }
+    //    if ($('#SiteTypeID').val() == '0') {
+    //        $("#SiteTypeID").addClass('errortext');
+    //        $('#SiteTypeID').focus();
+    //        return false;
+    //    }
+    //    if ($('#Location').val() == '') {
+    //        $("#Location").addClass('errortext');
+    //        $('#Location').focus();
+    //        return false;
+    //    }
+    //    if ($('#Rate').val() == '') {
+    //        $("#Rate").addClass('errortext');
+    //        $('#Rate').focus();
+    //        return false;
+    //    }
+    //    if ($('#UnitID').val() == '0') {
+    //        $("#UnitID").addClass('errortext');
+    //        $('#UnitID').focus();
+    //        return false;
+    //    }
+    //    if ($('#DevelopmentCharge').val() == '') {
+    //        $("#DevelopmentCharge").addClass('errortext');
+    //        $('#DevelopmentCharge').focus();
+    //        return false;
+    //    }
+    //    Isvalid = true;
+    //    return true;
+    //}
 
     function isNumberOrDecimal(evt) {
         var charCode = (evt.which) ? evt.which : evt.keyCode;
@@ -364,34 +598,276 @@
         }
     }
 
-    
+
+    $('#btnSave').click(function () {
+        debugger;
+        //  validateform();
+
+        var IsAllValid = true;
+        $("#divload").css({ 'display': '' });
+        $(".errortext").removeClass("errortext");
+        if ($('#SiteName').val() == '') {
+            $("#SiteName").addClass('errortext');
+            $('#SiteName').focus();
+            IsAllValid = false;
+            return false;
+        }
+        if ($('#SiteTypeID').val() == '0') {
+            $("#SiteTypeID").addClass('errortext');
+            $('#SiteTypeID').focus();
+            IsAllValid = false;
+            return false;
+        }
+
+        if ($('#Rate').val() == '') {
+            $("#Rate").addClass('errortext');
+            $('#Rate').focus();
+            IsAllValid = false;
+            return false;
+        }
+        if ($('#UnitID').val() == '0') {
+            $("#UnitID").addClass('errortext');
+            $('#UnitID').focus();
+            IsAllValid = false;
+            return false;
+        }
+        if ($('#Location').val() == '') {
+            $("#Location").addClass('errortext');
+            $('#Location').focus();
+            IsAllValid = false;
+            return false;
+        }
+        //var Imge = $("#files").val();
+        //if (Imge.length == "") {
+        //    $("#usercheck10").show();
+
+        //    isAllValid = false;
+        //    alert("please Select Image!!");
+        //    return false;
+        //}
+
+        if ($('#DevelopmentCharge').val() == '') {
+            $("#DevelopmentCharge").addClass('errortext');
+            $('#DevelopmentCharge').focus();
+            IsAllValid = false;
+            return false;
+        }
+
+
+        if (IsAllValid) {
+            var formData = new FormData();
+            // var files1 = $("#previewHolder").get(0).files;
+            formData.append("files0", files0);
+            formData.append("files1", files1);
+            formData.append("files2", files2);
+            formData.append("files3", files3);
+            formData.append("SiteName", $('#SiteName').val());
+            formData.append("SiteTypeID", $('#SiteTypeID').val());
+            formData.append("Rate", $('#Rate').val());
+            formData.append("UnitID", $('#UnitID').val());
+            formData.append("Location", $('#Location').val());
+            formData.append("DevelopmentCharge", $('#DevelopmentCharge').val());
+            formData.append("SiteID", $('#SiteID').val());
+            //console.log(formData);
+            $.ajax({
+                type: 'POST',
+                url: "SaveSite",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    debugger;
+
+                    alert(response);
+                    //if (response == true) {
+                    //    debugger;
+                    //    location.reload(true);
+
+                    //    list = [];
+                    //}
+                    //else {
+                    //    debugger;
+                    //    alert('Error');
+                    //}
+                    $('#submit').text('Save');
+                },
+                error: function (error) {
+                    debugger;
+                    console.log(error);
+                    $('#submit').text('Save');
+                }
+            });
+            $('#submit').text('Save');
+            //   location.reload(true);
+            //   $(window).load(true);
+        }
+    });
+
+
+    $('#btnUpdate').click(function () {
+        debugger;
+        //  validateform();
+
+        var IsAllValid = true;
+        $("#divload").css({ 'display': '' });
+        $(".errortext").removeClass("errortext");
+        if ($('#SiteName').val() == '') {
+            $("#SiteName").addClass('errortext');
+            $('#SiteName').focus();
+            IsAllValid = false;
+            return false;
+        }
+        if ($('#SiteTypeID').val() == '0') {
+            $("#SiteTypeID").addClass('errortext');
+            $('#SiteTypeID').focus();
+            IsAllValid = false;
+            return false;
+        }
+
+        if ($('#Rate').val() == '') {
+            $("#Rate").addClass('errortext');
+            $('#Rate').focus();
+            IsAllValid = false;
+            return false;
+        }
+        if ($('#UnitID').val() == '0') {
+            $("#UnitID").addClass('errortext');
+            $('#UnitID').focus();
+            IsAllValid = false;
+            return false;
+        }
+        if ($('#Location').val() == '') {
+            $("#Location").addClass('errortext');
+            $('#Location').focus();
+            IsAllValid = false;
+            return false;
+        }
+
+
+        //  var Imge = $("#files").val();
+        //  if (Imge.length == "") {
+        //   $("#usercheck10").show();
+        //    isAllValid = false;
+        //   alert("please Select Image!!");
+        //     return false;
+        //  }
+
+
+        if ($('#DevelopmentCharge').val() == '') {
+            $("#DevelopmentCharge").addClass('errortext');
+            $('#DevelopmentCharge').focus();
+            IsAllValid = false;
+            return false;
+        }
+
+
+        if (IsAllValid) {
+            var formData = new FormData();
+            // var files1 = $("#previewHolder").get(0).files;
+            formData.append("files0", files0);
+            formData.append("files1", files1);
+            formData.append("files2", files2);
+            formData.append("files3", files3);
+            formData.append("SiteName", $('#SiteName').val());
+            formData.append("SiteTypeID", $('#SiteTypeID').val());
+            formData.append("Rate", $('#Rate').val());
+            formData.append("UnitID", $('#UnitID').val());
+            formData.append("Location", $('#Location').val());
+            formData.append("DevelopmentCharge", $('#DevelopmentCharge').val());
+            formData.append("SiteID", $('#SiteID').val());
+            //console.log(formData);
+            $.ajax({
+                type: 'POST',
+                url: "UpdateSite",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    debugger;
+                    alert(response);
+                    GetMenuDetails();
+                  
+                   // location.reload();
+
+                    //   window.location.href = "/Master/SiteMaster";
+
+                    //  $(window).load(true);
+                    // var URL = "/Master/SiteMaster";
+                    //if (response == true) {
+                    //    debugger;
+                    //    location.reload(true);
+
+                    //    list = [];
+                    //}
+                    //else {
+                    //    debugger;
+                    //    alert('Error');
+                    //}
+                    $('#submit').text('Save');
+                },
+                error: function (error) {
+                    debugger;
+                    console.log(error);
+                    $('#submit').text('Save');
+                }
+            });
+            $('#submit').text('Save');
+            //   location.reload(true);
+            //   $(window).load(true);
+        }
+    });
 </script>
 
-<script>
-    $(document).ready(function () {
-        if (window.File && window.FileList && window.FileReader) {
-            var listImg= [];
-            var j = 0
-            $("#File").on("change", function (e) {
+
+
+@*<script>
+    //  $(document).ready(function () {
+
+    var listItem = [];
+   // var filelen = [];
+
+    var len = 0;
+    if (window.File && window.FileList && window.FileReader) {
+        var j = 1;
+        $("#files").on("change", function (e) {
+            debugger;
+
+            for (var filelen = 1; filelen <= $(this).get(0).files.length; filelen++) {
+                var indexval = $(this).get(0).files;
+                var prelen = len + filelen;
+                len = prelen;
+            }
+
+           // if (len < 5 ) {
+               // alert(len);
                 var files = e.target.files,
-                  filesLength = files.length;
-               
+                    listItem = e.target.files,
+                    filesLength = files.length;
+                   // len = files.length;
+
                 for (var i = 0; i < filesLength; i++) {
-                    j++;
                     var f = files[i]
+
                     var fileReader = new FileReader();
                     fileReader.onload = (function (e) {
-                        debugger;
+
                         var file = e.target;
                         $("<span class=\"pip\">" +
-                          "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\" Id=\"" + "image" + j + "\"/>" +
+                          "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
                           "<br/><span class=\"remove\">Remove image</span>" +
-                          "</span>").insertAfter("#File");
+                          "</span>").insertAfter("#files");
 
-                      
                         $(".remove").click(function () {
                             $(this).parent(".pip").remove();
-                            $('#File').val("");
+                            len = len-1;
+
+
+                            //  $(".pip").remove();
+                           // $('#files').val("");
+                            //  $("#files").files.length.remove();
+
                         });
 
                         // Old code here
@@ -403,102 +879,66 @@
 
                     });
                     fileReader.readAsDataURL(f);
-                   
+                    j++;
+                    $(".imgfluid").remove();
+
                 }
-            });
-        } else {
-            alert("Your browser doesn't support to File API")
-        }
-    });
-    $(".remove").click(function () {
-        $(this).parent(".pip").remove();
-        $('#File').val("");
-    });
+                console.log(files);
+                str(listItem);
 
-    $('#btnSave').click(function () {         
-            var listproducts = [];
-            $(this).find('.imageThumb').each(function () {
-                var $itm = $(this);
-                debugger;
-                listproducts = $('.pip img').attr('src');
-          
-            });
-           
-       
+            //} else {
+            //    alert("Please Select Less than 5 Image!!");
 
-           
-        
+            //}
+        });
 
-        var dts = $('.pip img').attr('src');
+    } else {
+        alert("Your browser doesn't support to File")
+    }
+
+    //    $('#files').val();
+    //  });
+
+
+   var len= $('.pip').children().length;
+
+    var dt = [];
+    // var listimg1 = JSON.stringify(dt);
+    var files0 = [];
+    var files1 = [];
+    var files2 = [];
+    var files3 = [];
+    var files4 = [];
+
+
+    if (files0.lenght > 0) {
+       $(".pip").remove();
+    }
+    function str(dt) {
+        var st = dt[0];
         debugger;
-        //var data = {
-        //    AddData: JSON.stringify(list),
-        //}
-        var formData = new FormData();
-        var files1 = $("#File").get(0).files;
-        formData.append("file", files1[0]);
-        formData.append("SiteName", $('#SiteName').val());
-        formData.append("SiteTypeID", $('#SiteTypeID').val());
-        formData.append("Rate", $('#Rate').val());
-        formData.append("UnitID", $('#UnitID').val());
-        formData.append("Location", $('#Location').val());
-        formData.append("DevelopmentCharge", $('#DevelopmentCharge').val());
-        formData.append("SiteID", $('#SiteID').val());  
-        //console.log(formData);
-        $.ajax({
-            type: 'POST',
-            url: "SaveSite",
-            data: formData,
-            cache: false,
-            contentType: false,
-            processData: false,
-            success: function (response) {
-                debugger;
-                if (response == true) {
-                    debugger;
-                    location.reload(true);
-                    list = [];
-                }
-                else {
-                    debugger;
-                  //  alert('Error');
-                }
-                $('#submit').text('Save');
+        $(dt).each(function (index, ele) {
+            debugger;
 
+            if (index == 0) {
+                files0 = ele;
+            } else if (index == 1) {
+                files1 = ele;
+            } else if (index == 2) {
+                files2 = ele;
+            } else if (index == 3) {
+                files3 = ele;
+            } else if (index == 4) {
+              //  $(".pip").remove();
 
+              //  $("#files").val("");
+                alert("Please select only 4 images!!");
 
-                //if (response.status) {
-
-                //    list = [];
-                //}
-                //if (response == true) {
-                //    debugger;
-                //   list = [];
-                //}
-                //else {
-                //    debugger;
-                //    alert('Error');
-                //}
-                //$('#submit').text('Save');
-                //  location.reload(true);
-                //  $(window).load(true);
-            },
-            error: function (error) {
-                debugger;
-                console.log(error);
-                $('#submit').text('Save');
             }
         });
-        $('#submit').text('Save');
-        //   location.reload(true);
-        //   $(window).load(true);
+    }
 
-    });
-
-
-</script>
-
-
+</script>*@
 
 
 <style>

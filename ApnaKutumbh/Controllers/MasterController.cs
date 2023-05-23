@@ -677,9 +677,10 @@ namespace ApnaKutumbh.Controllers
             if (SiteID != null)
             {
                 model.SiteID = Crypto.Decrypt(SiteID);
+                
                 List<Master> lst = new List<Master>();
                 DataSet dsSite = model.GetSiteList();
-                if (dsSite != null && dsSite.Tables.Count > 0)
+                if (dsSite != null && dsSite.Tables.Count > 0 && dsSite.Tables[0].Rows.Count > 0)
                 {
                     model.UnitID = dsSite.Tables[0].Rows[0]["FK_UnitID"].ToString();
                     model.SiteName = dsSite.Tables[0].Rows[0]["SiteName"].ToString();
@@ -687,6 +688,10 @@ namespace ApnaKutumbh.Controllers
                     model.Rate = dsSite.Tables[0].Rows[0]["Rate"].ToString();
                     model.SiteTypeID = dsSite.Tables[0].Rows[0]["FK_SiteTypeID"].ToString();
                     model.DevelopmentCharge = dsSite.Tables[0].Rows[0]["DevelopmentCharge"].ToString();
+                    model.SiteImage = dsSite.Tables[0].Rows[0]["Image"].ToString();
+                    model.SiteImage1 = dsSite.Tables[0].Rows[0]["Image1"].ToString();
+                    model.SiteImage2 = dsSite.Tables[0].Rows[0]["Image2"].ToString();
+                    model.SiteImage3 = dsSite.Tables[0].Rows[0]["Image3"].ToString();
                 }
 
 
@@ -723,42 +728,220 @@ namespace ApnaKutumbh.Controllers
                 }
 
             }
-
+            if (model.SiteID == "")
+            {
+                model.SiteID = null;
+            }
             return View(model);
         }
 
           [HttpPost]
         //[ActionName("SiteMaster")]
         //[OnAction(ButtonName = "btnSave")]
-        public ActionResult SaveSite(Master obj, HttpPostedFileBase file)
+        public ActionResult SaveSite(Master obj, HttpPostedFileBase files0, HttpPostedFileBase files1, HttpPostedFileBase files2, HttpPostedFileBase files3)
         {
 
+            if (files0 != null && files1 != null && files2 != null && files3 != null)
+            {
 
-            string myfile = "";
+                string myfile0 = "";
+                string myfile1 = "";
+                string myfile2 = "";
+                string myfile3 = "";
+                var ImgId = "";
+
+                try
+                {
+                    var allowedExtensions = new[] {
+                 ".Jpg", ".png", ".jpg", "jpeg"
+                };
+                    var fileName0 = Path.GetFileName(files0.FileName);
+                    var fileName1 = Path.GetFileName(files1.FileName);
+                    var fileName2 = Path.GetFileName(files2.FileName);
+                    var fileName3 = Path.GetFileName(files3.FileName);
+
+
+
+                    var ext0 = Path.GetExtension(files0.FileName);
+                    var ext1 = Path.GetExtension(files1.FileName);
+                    var ext2 = Path.GetExtension(files2.FileName);
+                    var ext3 = Path.GetExtension(files3.FileName);
+                    if (allowedExtensions.Contains(ext0))
+                    {
+                        string name = Path.GetFileNameWithoutExtension(fileName0);
+                        myfile0 = name + "_" + ImgId + ext0; //appending the name with id  
+                                                             // store the file inside ~/project folder(Img)              
+                        var path = Path.Combine(Server.MapPath("~/KYCDocuments"), myfile0);
+                        System.IO.File.Delete(path);
+                        files0.SaveAs(path);
+                        //  System.IO.File.Delete(path);
+                    }
+                    if (allowedExtensions.Contains(ext1))
+                    {
+                        string name = Path.GetFileNameWithoutExtension(fileName1);
+                        myfile1 = name + "_" + ImgId + ext1; //appending the name with id  
+                                                             // store the file inside ~/project folder(Img)              
+                        var path = Path.Combine(Server.MapPath("~/KYCDocuments"), myfile1);
+                        System.IO.File.Delete(path);
+                        files1.SaveAs(path);
+                    }
+                    if (allowedExtensions.Contains(ext2))
+                    {
+                        string name = Path.GetFileNameWithoutExtension(fileName2);
+                        myfile2 = name + "_" + ImgId + ext0; //appending the name with id  
+                                                             // store the file inside ~/project folder(Img)              
+                        var path = Path.Combine(Server.MapPath("~/KYCDocuments"), myfile2);
+                        System.IO.File.Delete(path);
+                        files2.SaveAs(path);
+                    }
+                    if (allowedExtensions.Contains(ext3))
+                    {
+                        string name = Path.GetFileNameWithoutExtension(fileName3);
+                        myfile3 = name + "_" + ImgId + ext0; //appending the name with id  
+                                                             // store the file inside ~/project folder(Img)              
+                        var path = Path.Combine(Server.MapPath("~/KYCDocuments"), myfile3);
+                        System.IO.File.Delete(path);
+                        files3.SaveAs(path);
+                    }
+                    else
+                    {
+                        ViewBag.message = "Please choose only Image file";
+                    }
+
+                }
+                catch (Exception e)
+                {
+                    ViewBag.message = "Please choose only Image file";
+                }
+                try
+                {
+
+                    DataTable dt = new DataTable();
+                    dt.Columns.Add("PK_PLCID", typeof(string));
+                    dt.Columns.Add("Charge", typeof(string));
+                    string hdrows = "";
+                    if (Request["hdRows"] != null)
+                    {
+                        hdrows = Request["hdRows"].ToString();
+                    }
+                    else
+                    {
+                        hdrows = "0";
+                    }
+                    for (int i = 1; i < int.Parse(hdrows); i++)
+                    {
+                        string plcid = Request["hdPLCID_ " + i].ToString();
+                        string charge = Request["txtCharge_ " + i].ToString();
+                        DataRow dr = dt.NewRow();
+                        dr = dt.NewRow();
+                        dr["PK_PLCID"] = plcid;
+                        dr["Charge"] = string.IsNullOrEmpty(charge) ? "0" : charge;
+                        dt.Rows.Add(dr);
+                    }
+
+                    obj.File = myfile0;
+                    obj.File1 = myfile1;
+                    obj.File2 = myfile2;
+                    obj.File3 = myfile3;
+
+                    obj.dtPLCCharge = dt;
+                    obj.AddedBy = Session["Pk_AdminId"].ToString();
+                    DataSet ds = new DataSet();
+                    ds = obj.SaveSite();
+                    if (ds != null && ds.Tables[0].Rows.Count > 0)
+                    {
+                        if (ds.Tables[0].Rows[0][0].ToString() == "1")
+                        {
+                            TempData["SiteMaster"] = "Site saved successfully";
+                        }
+                        else if (ds.Tables[0].Rows[0][0].ToString() == "0")
+                        {
+                            TempData["SiteMaster"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                        }
+                    }
+                    else
+                    {
+                        TempData["SiteMaster"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    TempData["SiteMaster"] = ex.Message;
+                }
+                // return RedirectToAction("SiteMaster", "Master");
+
+                return Json(TempData["SiteMaster"], JsonRequestBehavior.AllowGet);
+            }
+            return Json(false, JsonRequestBehavior.AllowGet);
+        }
+
+
+
+        [HttpPost]
+      //  [ActionName("SiteMaster")]
+      //  [OnAction(ButtonName = "btnUpdate")]
+        public ActionResult UpdateSite(Master obj, HttpPostedFileBase files0, HttpPostedFileBase files1, HttpPostedFileBase files2, HttpPostedFileBase files3)
+        {
+
+            string myfile0 = "";
+            string myfile1 = "";
+            string myfile2 = "";
+            string myfile3 = "";
             var ImgId = "";
+
             try
             {
-                // List<Master> imgCount = new List<Master>();
-                // DataSet img = new DataSet();
-                // img = userDetail.CountRegistrationId();
-                //if (img != null && img.Tables[0].Rows.Count > 0)
-                //{
-                //    ImgId = img.Tables[0].Rows[0]["id"].ToString();
-                //}
                 var allowedExtensions = new[] {
                  ".Jpg", ".png", ".jpg", "jpeg"
                 };
-                var fileName = Path.GetFileName(file.FileName);
-                var ext = Path.GetExtension(file.FileName);
-                if (allowedExtensions.Contains(ext))
+                var fileName0 = Path.GetFileName(files0.FileName);
+                var fileName1 = Path.GetFileName(files1.FileName);
+                var fileName2 = Path.GetFileName(files2.FileName);
+                var fileName3 = Path.GetFileName(files3.FileName);
+
+
+
+                var ext0 = Path.GetExtension(files0.FileName);
+                var ext1 = Path.GetExtension(files1.FileName);
+                var ext2 = Path.GetExtension(files2.FileName);
+                var ext3 = Path.GetExtension(files3.FileName);
+                if (allowedExtensions.Contains(ext0))
                 {
-                    string name = Path.GetFileNameWithoutExtension(fileName);
-                    myfile = name + "_" + ImgId + ext; //appending the name with id  
-                                                       // store the file inside ~/project folder(Img)              
-                    var path = Path.Combine(Server.MapPath("~/KYCDocuments"), myfile);
+                    string name = Path.GetFileNameWithoutExtension(fileName0);
+                    myfile0 = name + "_" + ImgId + ext0; //appending the name with id  
+                                                         // store the file inside ~/project folder(Img)              
+                    var path = Path.Combine(Server.MapPath("~/KYCDocuments"), myfile0);
                     System.IO.File.Delete(path);
-                    file.SaveAs(path);
+                    files0.SaveAs(path);
                     //  System.IO.File.Delete(path);
+                }
+                if (allowedExtensions.Contains(ext1))
+                {
+                    string name = Path.GetFileNameWithoutExtension(fileName1);
+                    myfile1 = name + "_" + ImgId + ext1; //appending the name with id  
+                                                         // store the file inside ~/project folder(Img)              
+                    var path = Path.Combine(Server.MapPath("~/KYCDocuments"), myfile1);
+                    System.IO.File.Delete(path);
+                    files1.SaveAs(path);
+                }
+                if (allowedExtensions.Contains(ext2))
+                {
+                    string name = Path.GetFileNameWithoutExtension(fileName2);
+                    myfile2 = name + "_" + ImgId + ext0; //appending the name with id  
+                                                         // store the file inside ~/project folder(Img)              
+                    var path = Path.Combine(Server.MapPath("~/KYCDocuments"), myfile2);
+                    System.IO.File.Delete(path);
+                    files2.SaveAs(path);
+                }
+                if (allowedExtensions.Contains(ext3))
+                {
+                    string name = Path.GetFileNameWithoutExtension(fileName3);
+                    myfile3 = name + "_" + ImgId + ext0; //appending the name with id  
+                                                         // store the file inside ~/project folder(Img)              
+                    var path = Path.Combine(Server.MapPath("~/KYCDocuments"), myfile3);
+                    System.IO.File.Delete(path);
+                    files3.SaveAs(path);
                 }
                 else
                 {
@@ -773,69 +956,6 @@ namespace ApnaKutumbh.Controllers
 
 
 
-
-            try
-            {
-
-                DataTable dt = new DataTable();
-                dt.Columns.Add("PK_PLCID", typeof(string));
-                dt.Columns.Add("Charge", typeof(string));
-                string hdrows = "";
-                if (Request["hdRows"] != null)
-                {
-                    hdrows = Request["hdRows"].ToString();
-                }
-                else
-                {
-                    hdrows = "0";
-                }
-                for (int i = 1; i < int.Parse(hdrows); i++)
-                {
-                    string plcid = Request["hdPLCID_ " + i].ToString();
-                    string charge = Request["txtCharge_ " + i].ToString();
-                    DataRow dr = dt.NewRow();
-                    dr = dt.NewRow();
-                    dr["PK_PLCID"] = plcid;
-                    dr["Charge"] = string.IsNullOrEmpty(charge) ? "0" : charge;
-                    dt.Rows.Add(dr);
-                }
-
-                obj.File = myfile;
-                obj.dtPLCCharge = dt;
-                obj.AddedBy = Session["Pk_AdminId"].ToString();
-                DataSet ds = new DataSet();
-                ds = obj.SaveSite();
-                if (ds != null && ds.Tables[0].Rows.Count > 0)
-                {
-                    if (ds.Tables[0].Rows[0][0].ToString() == "1")
-                    {
-                        TempData["SiteMaster"] = "Site saved successfully";
-                    }
-                    else if (ds.Tables[0].Rows[0][0].ToString() == "0")
-                    {
-                        TempData["SiteMaster"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
-                    }
-                }
-                else
-                {
-                    TempData["SiteMaster"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                TempData["SiteMaster"] = ex.Message;
-            }
-            return RedirectToAction("SiteMaster", "Master");
-        }
-
-        
-
-        [HttpPost]
-        [ActionName("SiteMaster")]
-        [OnAction(ButtonName = "btnUpdate")]
-        public ActionResult UpdateSite(Master obj)
-        {
             try
             {
                 DataTable dt = new DataTable();
@@ -863,8 +983,18 @@ namespace ApnaKutumbh.Controllers
                     dr["Charge"] = string.IsNullOrEmpty(charge) ? "0" : charge;
                     dt.Rows.Add(dr);
                 }
+                //obj.File = myfile0;
+                //obj.File1 = myfile1;
+                //obj.File2 = myfile2;
+                //obj.File3 = myfile3;
+
+                obj.File = string.IsNullOrEmpty(myfile0) ? null : myfile0;
+                obj.File1 = string.IsNullOrEmpty(myfile1) ? null : myfile1;
+                obj.File2 = string.IsNullOrEmpty(myfile2) ? null : myfile2;
+                obj.File3 = string.IsNullOrEmpty(myfile3) ? null : myfile3;
 
                 obj.dtPLCCharge = dt;
+
                 obj.AddedBy = Session["Pk_AdminId"].ToString();
                 DataSet ds = new DataSet();
                 ds = obj.UpdateSite();
@@ -889,7 +1019,8 @@ namespace ApnaKutumbh.Controllers
             {
                 TempData["SiteMaster"] = ex.Message;
             }
-            return RedirectToAction("SiteMaster", "Master");
+             return RedirectToAction("SiteMaster", "SiteList");
+           //  return Json(TempData["SiteMaster"], JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult SiteList(Master model)
@@ -912,6 +1043,9 @@ namespace ApnaKutumbh.Controllers
                     obj.DevelopmentCharge = (r["DevelopmentCharge"].ToString());
                     obj.SiteTypeName = (r["SiteTypeName"].ToString());
                     obj.SiteImage = (r["Image"].ToString());
+                    obj.SiteImage1 = (r["Image1"].ToString());
+                    obj.SiteImage2 = (r["Image2"].ToString());
+                    obj.SiteImage3 = (r["Image3"].ToString());
                     lst.Add(obj);
                 }
                 model.lstSite = lst;

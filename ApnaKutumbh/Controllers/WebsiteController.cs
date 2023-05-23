@@ -14,7 +14,23 @@ namespace ApnaKutumbh.Controllers
          //GET: Website
         public ActionResult Index()
         {
-            return View();
+            Website model = new Website();
+            List<Website> lst = new List<Website>();
+            DataSet ds = model.GetSiteImage();
+
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow r in ds.Tables[0].Rows)
+                {
+                    Website reqObj = new Website();
+                    reqObj.SiteImage = r["SiteImage"].ToString();
+                    reqObj.SiteName = r["SiteName"].ToString();
+                    lst.Add(reqObj);
+                }
+                model.listSiteImg = lst;
+            }
+
+            return View(model);
         }
         
         public ActionResult About()
