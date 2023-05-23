@@ -256,6 +256,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminLevelTree.aspx" />
+    <Content Include="AgencyBazaarLandingPage\assets\css\style.css" />
+    <Content Include="AgencyBazaarLandingPage\assets\css\style1.css" />
+    <Content Include="AgencyBazaarLandingPage\assets\img\agency_logo.png" />
+    <Content Include="AgencyBazaarLandingPage\assets\img\call-center-agent.png" />
+    <Content Include="AgencyBazaarLandingPage\assets\img\favicon.png" />
+    <Content Include="AgencyBazaarLandingPage\assets\img\mansion.png" />
+    <Content Include="AgencyBazaarLandingPage\assets\img\secure-img.png" />
+    <Content Include="AgencyBazaarLandingPage\assets\img\secure.png" />
+    <Content Include="AgencyBazaarLandingPage\assets\img\shield.png" />
+    <Content Include="AgencyBazaarLandingPage\assets\jquery-1.9.1.min.js" />
+    <Content Include="AgencyBazaarLandingPage\index.html" />
     <Content Include="AssociateCSS\assets\bundles\amcharts4\animated.js" />
     <Content Include="AssociateCSS\assets\bundles\amcharts4\charts.js" />
     <Content Include="AssociateCSS\assets\bundles\amcharts4\core.js" />
@@ -7611,6 +7622,7 @@
     <Content Include="Views\Website\About.cshtml" />
     <Content Include="Views\Website\Property.cshtml" />
     <Content Include="Views\Website\PropertyDetails.cshtml" />
+    <Content Include="Views\Website\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

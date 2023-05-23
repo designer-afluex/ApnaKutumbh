@@ -14,9 +14,14 @@ namespace ApnaKutumbh.Controllers
          //GET: Website
         public ActionResult Index()
         {
+            return Redirect("/AgencyBazaarLandingPage/index.html");
+            //return View();
+        }
+        public ActionResult Home()
+        {
             return View();
         }
-        
+
         public ActionResult About()
         {
             return View();
