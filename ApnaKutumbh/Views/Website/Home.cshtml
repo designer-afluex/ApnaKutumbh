@@ -1,4 +1,6 @@
 ﻿
+
+
 @{
     ViewBag.Title = "Home";
     Layout = "~/Views/Shared/WebsiteLayout.cshtml";
@@ -183,57 +185,18 @@
                 <div class="col-md-8 min-sec-ty pl-0">
                     <div class="row">
                         <div id="owl-demo5Agents" class="owl-demo5 owl-carousel owl-theme pl-20 pr-20">
-                            <div class="item pl-5 pr-5 min-type">
-                                <div class="min-type-t">
-                                    <img src="/images/r-type1.png" alt="house rent" />
-                                    <span class="min-t">
-                                        <a href="#" class="bg-black">
-                                            House Rent
-                                        </a>
+                            @foreach (var item in Model.lstSite)
+                            {
+                                <div class="item pl-5 pr-5 min-type">
+                                    <div class="min-type-t">
 
-                                    </span>
+                                        <img src="~/KYCDocuments/@item.SiteImage" alt="house rent" />
+                                        <span class="min-t">
+                                            <a href="#" class="bg-black">@item.SiteName</a>
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="item pl-5 pr-5 min-type">
-                                <div class="min-type-t">
-                                    <img src="/images/r-type2.png" alt="private house" />
-                                    <span class="min-t">
-                                        <a href="#" class="bg-black">
-                                            Private House
-                                        </a>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="item pl-5 pr-5 min-type">
-                                <div class="min-type-t">
-                                    <img src="/images/r-type3.png" alt="villa" />
-                                    <span class="min-t">
-                                        <a href="#" class="bg-black">
-                                            Villa
-                                        </a>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="item pl-5 pr-5 min-type">
-                                <div class="min-type-t">
-                                    <img src="/images/r-type3.png" alt="villa" />
-                                    <span class="min-t">
-                                        <a href="#" class="bg-black">
-                                            Villa
-                                        </a>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="item pl-5 pr-5 min-type">
-                                <div class="min-type-t">
-                                    <img src="/images/r-type3.png" alt="villa" />
-                                    <span class="min-t">
-                                        <a href="#" class="bg-black">
-                                            Villa
-                                        </a>
-                                    </span>
-                                </div>
-                            </div>
+                            }
                         </div>
                     </div>
                 </div>
@@ -252,38 +215,50 @@
                 </div>
                 <div class="col-md-7">
                     <div class="tab-con">
+
                         <ul class="nav nav-pills" role="tablist">
-                            <li class="nav-item">
-                                <a class="pointer nav-link active" id="pills-all-tab" data-toggle="pill"
-                                   href="#pills-all" role="tab" aria-controls="pills-all"
-                                   aria-selected="true">all</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="pointer nav-link" id="pills-apartment-tab" data-toggle="pill"
-                                   href="#pills-apartment" role="tab" aria-controls="pills-apartment"
-                                   aria-selected="false">apartment</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="pointer nav-link" id="pills-house-tab" data-toggle="pill"
-                                   href="#pills-house" role="tab" aria-controls="pills-house"
-                                   aria-selected="true">house</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="pointer nav-link" id="pills-office-tab" data-toggle="pill"
-                                   href="#pills-office" role="tab" aria-controls="pills-office"
-                                   aria-selected="true">office</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="pointer nav-link" id="pills-homes-tab" data-toggle="pill"
-                                   href="#pills-homes" role="tab" aria-controls="pills-homes"
-                                   aria-selected="true">homes</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="pointer nav-link" id="pills-villa-tab" data-toggle="pill"
-                                   href="#pills-villa" role="tab" aria-controls="pills-villa"
-                                   aria-selected="true">villa</a>
-                            </li>
+                            @foreach (var item in Model.SiteType)
+                            {
+
+
+                                <li class="nav-item">
+                                    <a class="pointer nav-link" id="pills-apartment-tab" data-toggle="pill"
+                                       href="#pills-apartment" role="tab" aria-controls="pills-apartment"
+                                       aria-selected="false">@item.SiteTypeName</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="pointer nav-link" id="pills-apartment-tab" data-toggle="pill"
+                                       href="#pills-apartment" role="tab" aria-controls="pills-apartment"
+                                       aria-selected="false">apartment</a>
+                                </li>
+
+
+                                <li class="nav-item">
+                                    <a class="pointer nav-link" id="pills-house-tab" data-toggle="pill"
+                                       href="#pills-house" role="tab" aria-controls="pills-house"
+                                       aria-selected="true">house</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="pointer nav-link" id="pills-office-tab" data-toggle="pill"
+                                       href="#pills-office" role="tab" aria-controls="pills-office"
+                                       aria-selected="true">office</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="pointer nav-link" id="pills-homes-tab" data-toggle="pill"
+                                       href="#pills-homes" role="tab" aria-controls="pills-homes"
+                                       aria-selected="true">homes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="pointer nav-link" id="pills-villa-tab" data-toggle="pill"
+                                       href="#pills-villa" role="tab" aria-controls="pills-villa"
+                                       aria-selected="true">villa</a>
+                                </li>
+
+                            }
+
                         </ul>
+
                     </div>
                 </div>
             </div>
@@ -292,22 +267,26 @@
                      aria-labelledby="pills-all-tab">
                     <div class="row">
                         <div class="col-md-4">
-                            <div class="min-pro-box">
-                                <a href="#">
-                                    <img src="/images/f1.png" alt="" class="bg-pro-i" />
-                                </a>
-                                <span class="tag-l">For Sale</span>
-                                <div class="min-box-t">
-                                    <h3>$1.34.00</h3>
-                                    <h3><a href="#">Villa on Hollywood Boulevard</a></h3>
-                                    <ul class="min-f-img">
-                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
-                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
-                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
-                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
-                                    </ul>
+                            @foreach (var item in Model.lstSite)
+                            {
+                                <div class="min-pro-box">
+                                    <a href="#">
+                                        @*<img src="/images/f1.png" alt="" class="bg-pro-i" />*@
+                                        <img src="~/KYCDocuments/@item.SiteImage"  class="bg-pro-i" />
+                                    </a>
+                                    <span class="tag-l">For Sale</span>
+                                    <div class="min-box-t">
+                                        <h3>$1.34.00</h3>
+                                        <h3><a href="#">Villa on Hollywood Boulevard</a></h3>
+                                        <ul class="min-f-img">
+                                            <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
+                                            <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                            <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
+                                            <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
+                            }
                         </div>
                         <div class="col-md-4">
                             <div class="min-pro-box">
@@ -520,6 +499,7 @@
                             <div class="min-pro-box">
                                 <a href="#">
                                     <img src="/images/f2.png" alt="" class="bg-pro-i" />
+
                                 </a>
                                 <span class="tag-l">For Sale</span>
                                 <div class="min-box-t">
@@ -639,7 +619,7 @@
                                     <h3><a href="#">Explore Old Barcelona</a></h3>
                                     <ul class="min-f-img">
                                         <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
-                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
+                                        <li><img src="/images/ba-o.png" alt="" />3 Ba</li>
                                         <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
                                         <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
                                     </ul>
@@ -1284,4 +1264,3 @@
     </section>
 
 </div>
-
