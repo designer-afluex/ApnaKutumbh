@@ -209,18 +209,15 @@
         <div class="container">
             <div class="row mb-40">
                 <div class="col-md-5">
-                    <div class="heading-t  fadeInUp animated">
+                    <div class="heading-t fadeInUp animated">
                         <h2>Popular Properties</h2>
                     </div>
                 </div>
                 <div class="col-md-7">
                     <div class="tab-con">
-
                         <ul class="nav nav-pills" role="tablist">
                             @foreach (var item in Model.SiteType)
                             {
-
-
                                 <li class="nav-item">
                                     <a class="pointer nav-link" id="pills-apartment-tab" data-toggle="pill"
                                        href="#pills-apartment" role="tab" aria-controls="pills-apartment"
@@ -232,8 +229,7 @@
                                        href="#pills-apartment" role="tab" aria-controls="pills-apartment"
                                        aria-selected="false">apartment</a>
                                 </li>
-
-
+                                
                                 <li class="nav-item">
                                     <a class="pointer nav-link" id="pills-house-tab" data-toggle="pill"
                                        href="#pills-house" role="tab" aria-controls="pills-house"
@@ -254,11 +250,9 @@
                                        href="#pills-villa" role="tab" aria-controls="pills-villa"
                                        aria-selected="true">villa</a>
                                 </li>
-
                             }
 
                         </ul>
-
                     </div>
                 </div>
             </div>
@@ -271,7 +265,6 @@
                             {
                                 <div class="min-pro-box">
                                     <a href="#">
-                                        @*<img src="/images/f1.png" alt="" class="bg-pro-i" />*@
                                         <img src="~/KYCDocuments/@item.SiteImage"  class="bg-pro-i" />
                                     </a>
                                     <span class="tag-l">For Sale</span>
