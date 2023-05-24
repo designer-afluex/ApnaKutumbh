@@ -284,7 +284,7 @@
                                 <div class="col-3">
                                     <input type="checkbox" id="checkpop" name="checkpop" />Is Popular Properties
 
-                                    <input type="text" id="textCheckbox" />
+                                    <input type="hidden" id="textCheckbox" />
                                 </div>
                             </div>
                          
@@ -680,6 +680,7 @@
             formData.append("Location", $('#Location').val());
             formData.append("DevelopmentCharge", $('#DevelopmentCharge').val());
             formData.append("SiteID", $('#SiteID').val());
+            formData.append("IsPopular", $('#textCheckbox').val());
             //console.log(formData);
             $.ajax({
                 type: 'POST',
