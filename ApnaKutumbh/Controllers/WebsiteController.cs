@@ -11,15 +11,55 @@ namespace ApnaKutumbh.Controllers
 {
     public class WebsiteController : Controller
     {
-         //GET: Website
+        //GET: Website
         public ActionResult Index()
         {
+
+
+
             return Redirect("/AgencyBazaarLandingPage/index.html");
             //return View();
         }
+
         public ActionResult Home()
         {
-            return View();
+            
+           
+            Master model = new Master();
+            List<Master> lstSite = new List<Master>();
+            List<Master> SiteType = new List<Master>();
+
+
+            DataSet ds2 = model.GetSiteTypeList();
+            if (ds2 != null && ds2.Tables.Count > 0 && ds2.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow r in ds2.Tables[0].Rows)
+                {
+                    Master obj = new Master();
+                    obj.SiteTypeName = r["SiteTypeName"].ToString();
+                    SiteType.Add(obj);
+                    
+                }
+
+            }
+
+            model.SiteType = SiteType;
+
+
+            DataSet ds = model.GetSiteImage();
+
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow r in ds.Tables[0].Rows)
+                {
+                    Master obj = new Master();
+                    obj.SiteImage = r["SiteImage"].ToString();
+                    obj.SiteName = r["SiteName"].ToString();
+                    lstSite.Add(obj);
+                }
+                model.lstSite = lstSite;
+            }
+            return View(model);
         }
 
         public ActionResult About()
@@ -35,7 +75,7 @@ namespace ApnaKutumbh.Controllers
         {
             return View();
         }
-        
+
 
         public ActionResult ContactUs()
         {
@@ -49,13 +89,13 @@ namespace ApnaKutumbh.Controllers
             try
             {
                 DataSet ds = model.SaveContact();
-                if(ds!=null && ds.Tables.Count>0 && ds.Tables[0].Rows.Count>0)
+                if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
                 {
-                    if(ds.Tables[0].Rows[0]["MSG"].ToString()=="1")
+                    if (ds.Tables[0].Rows[0]["MSG"].ToString() == "1")
                     {
                         TempData["Contactmsg"] = "Details saved successfully !";
                     }
-                    else if(ds.Tables[0].Rows[0]["MSG"].ToString() == "0")
+                    else if (ds.Tables[0].Rows[0]["MSG"].ToString() == "0")
                     {
                         TempData["Contactmsg"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
                     }
@@ -69,13 +109,13 @@ namespace ApnaKutumbh.Controllers
                     TempData["Contactmsg"] = ds.Tables[0].Rows[0]["ErrorMessage"].ToString();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 TempData["Contactmsg"] = ex.Message;
             }
             return RedirectToAction("ContactUs", "Website");
         }
-        
+
         public ActionResult Signin()
         {
             return View();

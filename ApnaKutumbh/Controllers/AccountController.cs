@@ -8,9 +8,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using HMGreenCityCRM.Models;
+using ApnaKutumbh.Models;
 
-namespace HMGreenCityCRM.Controllers
+namespace ApnaKutumbh.Controllers
 {
     [Authorize]
     public class AccountController : Controller

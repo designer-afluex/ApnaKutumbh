@@ -10,11 +10,13 @@ namespace ApnaKutumbh.Models
 {
     public class Website : Common
     {
-
+        public List<Website> listSiteImg { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Mobile { get; set; }
         public string Address { get; set; }
+        public string SiteImage { get; set;}
+        public string SiteName { get; set;}
 
         public DataSet SaveContact()
         {
@@ -28,6 +30,14 @@ namespace ApnaKutumbh.Models
             DataSet ds = Connection.ExecuteQuery("SaveContact",para);
             return ds;
         }
-        
+
+
+        public DataSet GetSiteImage()
+        {
+            DataSet ds = Connection.ExecuteQuery("BindSiteImage");
+            return ds;
+        }
     }
+
+
 }
