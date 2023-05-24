@@ -54,6 +54,11 @@ namespace ApnaKutumbh.Controllers
                 {
                     Master obj = new Master();
                     obj.SiteImage = r["SiteImage"].ToString();
+                    obj.SiteImage1 = r["Image1"].ToString();
+                    obj.SiteImage2 = r["Image2"].ToString();
+                    obj.SiteImage3 = r["Image3"].ToString();
+                   
+
                     obj.SiteName = r["SiteName"].ToString();
                     lstSite.Add(obj);
                 }
