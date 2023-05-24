@@ -151,7 +151,7 @@
         autoplayHoverPause: false,
         margin: 15,
         responsiveClass: true,
-        navText: ["<img src='./images/left-arrow-small.png'/>", "<img src='./images/right-arrow-small.png'/>"],
+        navText: ["<img src='/images/left-arrow-small.png'/>", "<img src='/images/right-arrow-small.png'/>"],
         responsive: {
             0: {
                 items: 1,
@@ -207,7 +207,7 @@
         autoplayHoverPause: false,
         margin: 25,
         responsiveClass: true,
-        navText: ["<img src='./images/left-arrow-small.png'/>", "<img src='./images/right-arrow-small.png'/>"],
+        navText: ["<img src='/images/left-arrow-small.png'/>", "<img src='/images/right-arrow-small.png'/>"],
         responsive: {
             0: {
                 items: 1,
@@ -218,7 +218,7 @@
                 nav: false
             },
             1000: {
-                items: 4,
+                items: 3,
                 autoplay: false,
                 autoplayHoverPause: false,
                 nav: true,

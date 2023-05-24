@@ -983,10 +983,7 @@ namespace ApnaKutumbh.Controllers
                     dr["Charge"] = string.IsNullOrEmpty(charge) ? "0" : charge;
                     dt.Rows.Add(dr);
                 }
-                //obj.File = myfile0;
-                //obj.File1 = myfile1;
-                //obj.File2 = myfile2;
-                //obj.File3 = myfile3;
+               
 
                 obj.File = string.IsNullOrEmpty(myfile0) ? null : myfile0;
                 obj.File1 = string.IsNullOrEmpty(myfile1) ? null : myfile1;

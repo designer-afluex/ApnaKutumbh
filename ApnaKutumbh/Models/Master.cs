@@ -78,9 +78,11 @@ namespace ApnaKutumbh.Models
         public string File1 { get; set; }
         public string File2 { get; set; }
         public string File3 { get; set; }
+        public string IsPopular { get; set; }
         public List<Master> lstContact { get; set; }
+        public List<Master> SiteType { get; set; }
 
-
+        
         #endregion
 
         #region PLCMaster
@@ -138,7 +140,8 @@ namespace ApnaKutumbh.Models
                                       new SqlParameter("@Image", File),
                                       new SqlParameter("@Image1", File1),
                                       new SqlParameter("@Image2", File2),
-                                      new SqlParameter("@Image3", File3)
+                                      new SqlParameter("@Image3", File3),
+                                       new SqlParameter("@IsPopular",IsPopular)
             };
             DataSet ds = Connection.ExecuteQuery("SiteMaster", para);
             return ds;
@@ -158,7 +161,8 @@ namespace ApnaKutumbh.Models
                                       new SqlParameter("@Image", File),
                                       new SqlParameter("@Image1",File1),
                                       new SqlParameter("@Image2",File2),
-                                      new SqlParameter("@Image3",File3)
+                                      new SqlParameter("@Image3",File3),
+                                      new SqlParameter("@IsPopular",IsPopular)
 
             };
             DataSet ds = Connection.ExecuteQuery("UpdateSite", para);
@@ -925,7 +929,11 @@ namespace ApnaKutumbh.Models
         }
 
 
-       
+        public DataSet GetSiteImage()
+        {
+            DataSet ds = Connection.ExecuteQuery("BindSiteImage");
+            return ds;
+        }
 
 
     }

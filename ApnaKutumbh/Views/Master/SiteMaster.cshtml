@@ -244,6 +244,7 @@
 
 
                         </div>
+                        
 
                         <div class="row">
                             @if (Model.SiteID == null)
@@ -263,15 +264,12 @@
                                     </span>
                                 </div>
                             }
-                        </div>
-
-                     
+                        </div>             
                             <div class="form-group row">
                                 @*<div class="col-sm-12">
                                     <h3>Upload your images  </h3>
                                     <input type="file" id="files" name="files[]"  multiple />                           
                                 </div>*@
-
 
                                 <div class="upload__box">
                                     <div class="upload__btn-box">
@@ -283,10 +281,14 @@
                                     <div class="upload__img-wrap"></div>
                                 </div> 
 
-                            </div>
+                                <div class="col-3">
+                                    <input type="checkbox" id="checkpop" name="checkpop" />Is Popular Properties
 
-                        
-                     
+                                    <input type="text" id="textCheckbox" />
+                                </div>
+                            </div>
+                         
+
                         <div class="form-group row">
                             <div class="col-sm-12">
                                 <div class="table-responsive">
@@ -329,16 +331,15 @@
                         </div>
 
                         <div class="form-group row">
-
                             <div class="input-field col row-cols-lg-3">
                                 Development Charge<span style="color:red">*</span>
                                 @Html.TextBoxFor(m => m.DevelopmentCharge, new { @class = "form-control", @Placeholder = "Development Charge", @onkeypress = "return isNumberOrDecimal(event);" })
                                 <span class="form-bar"></span>
                             </div>
-
                         </div>
                     </div>
                     <br />
+                   
                     <div class="form-group row">
 
                         <div class="input-field col m6 s12">
@@ -382,6 +383,17 @@
 <script>
     $(document).ready(function () {
         ImgUpload();
+        $('#textCheckbox').val($(this).is(':checked'));
+        $('#checkpop').change(function () {
+            $('#textCheckbox').val($(this).is(':checked'));
+        });
+        $('#checkpop').click(function () {
+            if (!$(this).is(':checked')) {
+              //  return confirm("Are you sure?");
+            }
+        });
+
+        
     });
 
     function ImgUpload() {
@@ -776,6 +788,7 @@
             formData.append("Location", $('#Location').val());
             formData.append("DevelopmentCharge", $('#DevelopmentCharge').val());
             formData.append("SiteID", $('#SiteID').val());
+            formData.append("IsPopular", $('#textCheckbox').val());
             //console.log(formData);
             $.ajax({
                 type: 'POST',
