@@ -209,20 +209,17 @@
         <div class="container">
             <div class="row mb-40">
                 <div class="col-md-5">
-                    <div class="heading-t  fadeInUp animated">
+                    <div class="heading-t fadeInUp animated">
                         <h2>Popular Properties</h2>
                     </div>
                 </div>
                 <div class="col-md-7">
                     <div class="tab-con">
-
                         <ul class="nav nav-pills" role="tablist">
                             @foreach (var item in Model.SiteType)
                             {
-
-
                                 <li class="nav-item">
-                                    <a class="pointer nav-link" id="pills-apartment-tab" data-toggle="pill"
+                                    <a class="pointer nav-link active" id="pills-apartment-tab" data-toggle="pill"
                                        href="#pills-SiteTypeName" role="tab" aria-controls="pills-apartment"
                                        aria-selected="false">@item.SiteTypeName</a>
                                 </li>
@@ -232,208 +229,77 @@
                                        href="#pills-apartment" role="tab" aria-controls="pills-apartment"
                                        aria-selected="false">apartment</a>
                                 </li>
-
-
+                                
                                 <li class="nav-item">
                                     <a class="pointer nav-link" id="pills-house-tab" data-toggle="pill"
                                        href="#pills-house" role="tab" aria-controls="pills-house"
                                        aria-selected="true">house</a>
                                 </li>
+
                                 <li class="nav-item">
                                     <a class="pointer nav-link" id="pills-office-tab" data-toggle="pill"
                                        href="#pills-office" role="tab" aria-controls="pills-office"
                                        aria-selected="true">office</a>
                                 </li>
+
                                 <li class="nav-item">
                                     <a class="pointer nav-link" id="pills-homes-tab" data-toggle="pill"
                                        href="#pills-homes" role="tab" aria-controls="pills-homes"
                                        aria-selected="true">homes</a>
                                 </li>
+
                                 <li class="nav-item">
                                     <a class="pointer nav-link" id="pills-villa-tab" data-toggle="pill"
                                        href="#pills-villa" role="tab" aria-controls="pills-villa"
                                        aria-selected="true">villa</a>
                                 </li>
-
                             }
 
                         </ul>
-
                     </div>
                 </div>
             </div>
             <div class="tab-content p-0 shadow-none" id="pills-tabContent">
-                <div class="tab-pane fade active show" id="pills-all" role="tabpanel"
-                     aria-labelledby="pills-all-tab">
-                    <div class="row">
-                        <div class="col-md-4">
-                            @foreach (var item in Model.lstSite)
-                            {
-                                <div class="min-pro-box">
-                                    <a href="#">
-                                        @*<img src="/images/f1.png" alt="" class="bg-pro-i" />*@
-                                        <img src="~/KYCDocuments/@item.SiteImage"  class="bg-pro-i" />
-                                    </a>
-                                    <span class="tag-l">For Sale</span>
-                                    @*<div class="min-box-t">
-                                        <h3>$1.34.00</h3>
-                                        <h3><a href="#">Villa on Hollywood Boulevard</a></h3>
-                                        <ul class="min-f-img">
-                                            <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
-                                            <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
-                                            <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
-                                            <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
-                                        </ul>
-                                    </div>*@
-                                </div>
-
-                          
-                            }
-                        </div>
-                        <div class="col-md-4">
-                            <div class="min-pro-box">
-                                <a href="#">
-                                    <img src="/images/f2.png" alt="" class="bg-pro-i" />
-                                </a>
-                                <span class="tag-l">For Rent</span>
-                                <div class="min-box-t">
-                                    <h3>$1.34.00</h3>
-                                    <h3><a href="#">Buffalo Valley Path, Monument</a></h3>
-                                    <ul class="min-f-img">
-                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
-                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
-                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
-                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="min-pro-box">
-                                <a href="#">
-                                    <img src="/images/f3.png" alt="" class="bg-pro-i" />
-                                </a>
-                                <span class="tag-l">For Sale</span>
-                                <div class="min-box-t">
-                                    <h3>$1.34.00</h3>
-                                    <h3><a href="#">Coral Ridge Colorado Springs</a></h3>
-                                    <ul class="min-f-img">
-                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
-                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
-                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
-                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="min-pro-box">
-                                <a href="#">
-                                    <img src="/images/f4.png" alt="" class="bg-pro-i" />
-                                </a>
-                                <span class="tag-l">For Sale</span>
-                                <div class="min-box-t">
-                                    <h3>$1.34.00</h3>
-                                    <h3><a href="#">Whileaway Ct, Colorado Springs</a></h3>
-                                    <ul class="min-f-img">
-                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
-                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
-                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
-                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="min-pro-box">
-                                <a href="#">
-                                    <img src="/images/f5.png" alt="" class="bg-pro-i" />
-                                </a>
-                                <span class="tag-l">For Sale</span>
-                                <div class="min-box-t">
-                                    <h3>$1.34.00</h3>
-                                    <h3><a href="#">Alberta Falls Way</a></h3>
-                                    <ul class="min-f-img">
-                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
-                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
-                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
-                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="min-pro-box">
-                                <a href="#">
-                                    <img src="/images/f6.png" alt="" class="bg-pro-i" />
-                                </a>
-                                <span class="tag-l">For Sale</span>
-                                <div class="min-box-t">
-                                    <h3>$1.34.00</h3>
-                                    <h3><a href="#">Jouflas Ranch Road Wolcott, CO</a></h3>
-                                    <ul class="min-f-img">
-                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
-                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
-                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
-                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="pills-SiteTypeName" role="tabpanel"
+                <div class="tab-pane fade active show" id="pills-SiteTypeName" role="tabpanel"
                      aria-labelledby="pills-apartment-tab">
                     <div class="row">
-                        @foreach (var item in Model.lstSite)
-                        {
-                            <div class="min-pro-box">
-                                <a href="#">
-                                    @*<img src="/images/f1.png" alt="" class="bg-pro-i" />*@
-                                    <img src="~/KYCDocuments/@item.SiteImage" class="bg-pro-i" />
-                                </a>
-                                <span class="tag-l">For Sale</span>
-                                @*<div class="min-box-t">
-                                    <h3>$1.34.00</h3>
-                                    <h3><a href="#">Villa on Hollywood Boulevard</a></h3>
-                                    <ul class="min-f-img">
-                                        <li><img src="/images/b-o.png" alt="" /> 3 Br</li>
-                                        <li><img src="/images/ba-o.png" alt="" /> 3 Ba</li>
-                                        <li><img src="/images/g-o.png" alt="" /> 1 Gr</li>
-                                        <li><img src="/images/s-o.png" alt="" /> 2300 Sq.Ft</li>
-                                    </ul>
-                                </div>*@
-                            </div>
-                            <div class="min-pro-box">
-                                <a href="#">
+                       
+                            @foreach (var item in Model.lstSite)
+                            {
+                                <div class="col-md-3">
+                                    <div class="min-pro-box">
+                                        <a href="#">
+                                            <img src="~/KYCDocuments/@item.SiteImage" style="height:250px" class="bg-pro-i" />
+                                        </a>
+                                        <span class="tag-l">For Sale</span>
+                                    </div>
+                                    @*<div class="min-pro-box">
+                                        <a href="#">
+
+                                            <img src="~/KYCDocuments/@item.SiteImage1" style="height:250px" class="bg-pro-i" />
+                                        </a>
+                                        <span class="tag-l">For Sale</span>
+
+                                    </div>
+                                    <div class="min-pro-box">
+                                        <a href="#">
+                                            <img src="~/KYCDocuments/@item.SiteImage2" style="height:250px" class="bg-pro-i" />
+                                        </a>
+                                        <span class="tag-l">For Sale</span>
+
+                                    </div>
+                                    <div class="min-pro-box">
+                                        <a href="#">
+
+                                            <img src="~/KYCDocuments/@item.SiteImage3" style="height:250px" class="bg-pro-i" />
+                                        </a>
+                                        <span class="tag-l">For Sale</span>
+                                    </div>*@
                                   
-                                    <img src="~/KYCDocuments/@item.SiteImage1" class="bg-pro-i" />
-                                </a>
-                                <span class="tag-l">For Sale</span>
-                                
-                            </div>
-                            <div class="min-pro-box">
-                                <a href="#">
-
-                                    <img src="~/KYCDocuments/@item.SiteImage2" class="bg-pro-i" />
-                                </a>
-                                <span class="tag-l">For Sale</span>
-
-                            </div>
-                            <div class="min-pro-box">
-                                <a href="#">
-
-                                    <img src="~/KYCDocuments/@item.SiteImage3" class="bg-pro-i" />
-                                </a>
-                                <span class="tag-l">For Sale</span>
-
-                            </div>
-                        }
-
-
-                    </div>
+                                </div>  
+                            }
                 </div>
-
+                    </div>
                 <div class="tab-pane fade" id="pills-apartment" role="tabpanel"
                      aria-labelledby="pills-apartment-tab">
                     <div class="row">
