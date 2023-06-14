@@ -12,10 +12,9 @@ namespace ApnaKutumbh.Models
     {
         #region Properties
       
-        public string Subject { get; set; }
-        public string Body { get; set; }
+      
+      
         public string Mobile { get; set; }
-        public string Email { get; set; }
         public string Description { get; set; }
         public string FileUpload { get; set; }
         public string Name { get; set; }
@@ -81,9 +80,17 @@ namespace ApnaKutumbh.Models
         public string IsPopular { get; set; }
         public List<Master> lstContact { get; set; }
         public List<Master> SiteType { get; set; }
-
-        
+        public List<Master> lstImge { get; set;}
+        public List<Master> lstEnquiry { get; set; }
+        public string Image { get; set; }
         #endregion
+        
+         public string Email { get; set; }
+         public string Subject { get; set; }
+         public string Body { get; set; }
+        public string Message { get; set; }
+        
+
 
         #region PLCMaster
         public DataSet SavePLC()
@@ -199,6 +206,14 @@ namespace ApnaKutumbh.Models
             return ds;
         }
 
+        public DataSet GetEnquiryDetails()
+        {
+
+            DataSet ds = Connection.ExecuteQuery("GetEnquiryList");
+            return ds;
+        }
+
+
         #endregion
         public DataSet GetMenuPermissionList()
         {
@@ -306,8 +321,8 @@ namespace ApnaKutumbh.Models
         public DataSet GetBlockList()
         {
             SqlParameter[] para ={ new SqlParameter("@SiteID",SiteID),
-                                     new SqlParameter("@SectorID",SectorID),
-                                     new SqlParameter("@BlockID",BlockID),
+                                   new SqlParameter("@SectorID",SectorID),
+                                   new SqlParameter("@BlockID",BlockID),
                                  };
             DataSet ds = Connection.ExecuteQuery("GetBlockList", para);
             return ds;
@@ -695,7 +710,6 @@ namespace ApnaKutumbh.Models
         public string PlotNumber1 { get; set; }
         public DataSet AutoUnholdPlot()
         {
-
             DataSet ds = Connection.ExecuteQuery("AutoUnholdPlot");
             return ds;
         }
@@ -713,11 +727,27 @@ namespace ApnaKutumbh.Models
 
                                       new SqlParameter("@Name", Name),
                                       new SqlParameter("@Details", Details),
-                                        new SqlParameter("@AddedBy", AddedBy)
+                                      new SqlParameter("@AddedBy", AddedBy)
                                   };
             DataSet ds = Connection.ExecuteQuery("EnquiryMaster", para);
             return ds;
         }
+
+
+        public DataSet SaveEnquiryDetails()
+        {
+            SqlParameter[] para = {
+
+                                      new SqlParameter("@Name", Name),
+                                      new SqlParameter("@Email", Email),
+                                      new SqlParameter("@Mobile", Mobile),
+                                      new SqlParameter("@Description",Description)
+
+                                  };
+            DataSet ds = Connection.ExecuteQuery("SaveEnquiry", para);
+            return ds;
+        }
+
 
         public DataSet SaveCareer()
         {
@@ -934,7 +964,24 @@ namespace ApnaKutumbh.Models
             DataSet ds = Connection.ExecuteQuery("BindSiteImage");
             return ds;
         }
+        public DataSet PropertyTypeImage()
+        {
+            DataSet ds = Connection.ExecuteQuery("PropertyTypeImage");
+            return ds;
+        }
 
+        public DataSet GetPlotDetailsbySite()
+        {
+            SqlParameter[] para =
+             {
+                 new SqlParameter("@SiteName",SiteName),
+               
+            };
+            DataSet ds = Connection.ExecuteQuery("GetPlotDetailsbySite", para);
+            return ds;
+        }
+
+       
 
     }
 }

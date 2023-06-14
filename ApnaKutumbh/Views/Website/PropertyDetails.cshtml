@@ -1,11 +1,10 @@
-﻿
+﻿@model ApnaKutumbh.Models.Master
+
 @{
     ViewBag.Title = "PropertyDetails";
     Layout = "~/Views/Shared/WebsiteLayout.cshtml";
 }
-
 <div class="minsection">
-
     <div class="sub-banner pt-90 pb-90">
         <div class="container">
             <div class="col-md-8  offset-md-2">
@@ -25,130 +24,40 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="left-side-detail">
-                        <img src="/images/pro-details.png" alt="" class="img-fluid" />
-                        <div class="f-cont-f">
-                            <h3>Ample Apartment At Last Floor</h3>
+                        <img src="~/KYCDocuments/@Model.Image" alt="" class="img-fluid" />
+                        <div class="f-cont-f">                           
+                            @*<h3>@Model.SiteName</h3>*@
+                            @*<img src="~/KYCDocuments/@Model.SiteImage" />
+                            <img src="~/KYCDocuments/@Model.SiteImage1" />
+                            <img src="~/KYCDocuments/@Model.SiteImage2" />
+                            <img src="~/KYCDocuments/@Model.SiteImage3" />*@
                             <ul class="img-map-co map-i-con">
                                 <li>
-                                    <img src="//images/map.png" alt="" class="map-i">
-                                    Virginia drive temple hills
-                                </li>
-                                <li>
-                                    <img src="//images/clock.png" alt="" class="map-i">
-                                    10 days ago
-                                </li>
+                                    @*<img src="~/KYCDocuments/@Model.SiteImage" alt="" class="map-i">
+                                    @Model.SiteName*@
+                                </li>                
                             </ul>
-                            <h3 class="price-m">$230.00/<span>Month</span></h3>
+                       
                         </div>
+
                         <div class="min-details">
                             <h3>Property Details</h3>
                             <div class="min-det-f-list">
                                 <ul class="property-list-f list-unstyled">
-                                    <li><b>Property ID:</b> RV151</li>
-                                    <li><b>Price:</b> $484,400</li>
-                                    <li><b>Property Size:</b> 1466 Sq Ft</li>
-                                    <li><b>Bedrooms:</b> 4</li>
-                                    <li><b>Bathrooms:</b> 2</li>
-                                </ul>
-                                <ul class="property-list-f list-unstyled">
-                                    <li><b>Garage:</b> 1</li>
-                                    <li><b>Garage Size:</b> 458 SqFt</li>
-                                    <li><b>Year Built:</b> 2019-01-09</li>
-                                    <li><b>Property Type:</b> Full Family Home</li>
-                                    <li><b>Property Status:</b> For rent</li>
+                                    <li><b>Site Name:</b>@Model.SiteName</li>
+                                    <li style="white-space: nowrap;"><b>Location:</b> @Model.Location</li>
+                                    <li><b>Rate:</b> @Model.Rate</li>
+                                    <li><b>Sector:</b> @Model.SectorName</li>
+                                    <li><b>Block:</b> @Model.BlockName</li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="min-details">
-                            <h3>Property Details</h3>
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                                unknown printer took a galley of type and scrambled it to make a type specimen book.
-                                It has survived not only five centuries, but also the leap into electronic
-                                typesetting, remaining essentially unchanged. It was popularised in the 1960s with
-                                the release of Letraset sheets containing Lorem Ipsum passages, and more recently
-                                with desktop publishing software like Aldus PageMaker including versions of Lorem
-                                Ipsum.
-                            </p>
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                                unknown printer took a galley of type and scrambled it to make a type specimen book.
-                            </p>
-                        </div>
-                        <div class="min-details">
-                            <h3>Features</h3>
-                            <ul class="min-feature">
-                                <li>TV Cable</li>
-                                <li>Air Conditioning</li>
-                                <li>Barbeque</li>
-                                <li>Gym</li>
-                                <li>Swimming Pool</li>
-                                <li>Laundry</li>
-                                <li>Microwave</li>
-                                <li>Outdoor Shower</li>
-                                <li>Lawn</li>
-                                <li>Refrigerator</li>
-                                <li>Sauna</li>
-                                <li>Washer</li>
-                                <li>Dryer</li>
-                                <li>WiFi</li>
-                                <li>Window Coverings</li>
-                            </ul>
-                        </div>
-                        <div class="min-details border-no">
-                            <h3>Gallery</h3>
-                            <div class="min-gallery-i row">
-                                <div class="col-md-5">
-                                    <span class="pl-5gallery">
-                                        <a href="//images/p-g1.png" class="image-popup-vertical-fit">
-                                            <img src="/images/p-g1.png" alt="" class="min-gallery-i img-fluid" />
-                                        </a>
-                                       
-                                    </span>
-                                    <span class="pl-5gallery wi-50-img p-r-5 p-l-0">
-                                        <a href="//images/p-g2.png" class="image-popup-vertical-fit">
-                                            <img src="/images/p-g2.png" alt="" class="min-gallery-i img-fluid" />
-                                        </a>
-                                    </span>
-                                    <span class="pl-5gallery wi-50-img p-r-5 p-r-0">
-                                        <a href="//images/p-g3.png" class="image-popup-vertical-fit">
-                                            <img src="/images/p-g3.png" alt="" class="min-gallery-i img-fluid" />
-                                        </a>
-                                    </span>
-                                </div>
-                                <div class="col-md-3">
-                                    <span class="pl-5gallery">
-                                        <a href="/images/p-g4.png" class="image-popup-vertical-fit">
-                                            <img src="/images/p-g4.png" alt="" class="min-gallery-i img-fluid" />
-                                        </a>
-                                    </span>
-                                </div>
-                                <div class="col-md-4">
-                                    <span class="pl-5gallery">
-                                        <a href="/images/p-g5.png" class="image-popup-vertical-fit">
-                                            <img src="/images/p-g5.png" alt="" class="min-gallery-i img-fluid" />
-                                        </a>
-                                    </span>
-                                    <span class="pl-5gallery  wi-50-img p-r-5 p-l-0">
-                                        <a href="/images/p-g6.png" class="image-popup-vertical-fit">
-                                            <img src="/images/p-g6.png" alt="" class="min-gallery-i img-fluid" />
-                                        </a>
-                                    </span>
-                                    <span class="pl-5gallery  wi-50-img p-r-5 p-r-0">
-                                        <a href="/images/p-g7.png" class="image-popup-vertical-fit">
-                                            <img src="/images/p-g7.png" alt="" class="min-gallery-i img-fluid" />
-                                        </a>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
+                      
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="booking">
-                        <div class="agent-chat">
+                        @*<div class="agent-chat">
                             <div class="min-chat">
                                 <span class="agent-i">
                                     <img src="/images/tw1.png" alt="" class="img-fluid" />
@@ -171,26 +80,36 @@
                                 </a>
                                 <button class="wid-50 send-message">Send Message</button>
                             </div>
-                        </div>
+                        </div>*@
                         <div class="send-message-pro">
                             <h3>Send Enquiry</h3>
-                            <form>
+                            @*<form>*@
+                          
+
                                 <div class="form-group">
-                                    <input type="text" placeholder="Name" class="form-control fill-form" />
+                                    <input type="text" id="Name" name="Name" placeholder="Name" class="form-control fill-form" />
+                                    
+                                    <span id="first_name_error">*</span>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" placeholder="Email" class="form-control fill-form" />
+                                    <input type="text" id="Email" name="Email"  placeholder="Email" class="form-control fill-form" />
+                                    <span id="email_address1_error">*</span>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" placeholder="Phone" class="form-control fill-form" />
+                                    <input type="text" id="Mobile" name="Mobile" placeholder="Phone" class="form-control fill-form" />
                                 </div>
                                 <div class="form-group">
-                                    <textarea placeholder="Message" class="form-control fill-form"></textarea>
+                                    <textarea placeholder="Message" id="Description" name="Description"  class="form-control fill-form"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <button class="send-m">Send Message</button>
+                                    @*<button class="send-m" >Send Message</button>*@
+                                    <button class="btn btn-primary" onclick="sendMail()">Send Message</button>
+
+                                    
                                 </div>
-                            </form>
+
+                        
+                            @*</form>*@
                         </div>
                     </div>
                 </div>
@@ -199,4 +118,53 @@
     </section>
 </div>
 
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    function sendMail() {      
+        var name = document.getElementById('Name').value;
+        var email = document.getElementById('Email').value;
+        var Mobile = document.getElementById('Mobile').value;
+        var Description = document.getElementById('Description').value;
+        var body = 'name:' + name + '<br/>email:' + email + '<br/>phone:' + Mobile + '<br/>Description:' + Description;
+        debugger;
+        Email.send({
+            Host: "smtp.elasticemail.com",
+            Username: "afluexdeveloper7@gmail.com",
+            Password: "BFC48F0F5A85EFF1201DFF5EE656D109502B",
+            To: 'parveen.mrj@gmail.com',
+            From: "afluexdeveloper7@gmail.com",
+            Subject: "Enquiry",
+            Body: body,
+        })
+            .then(function (message) {
+                alert("Message Send Successfully!!");
+                $("#Name").val('');
+                $("#Email").val('');
+                $("#Mobile").val('');
+                $("#Description").val('');
+                sendEmail();
+
+            });
+    }
+    function sendEmail() {
+        var email = '{Name: "' + $("#Name").val() + '", Email: "' + $("#Email").val() + '",Mobile: "' + $("#Mobile").val() + '",Description: "' + $("#Description").val() + '"}';
+        $.ajax({
+            type: "POST",
+            url: "/Website/SendEmail",
+            data: email,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                debugger;              
+               // alert(response);
+            },
+            failure: function (response) {
+                alert("Error");
+            },
+            error: function (response) {
+               // alert('Error');
+            }
+        });
+    }
+</script>
 

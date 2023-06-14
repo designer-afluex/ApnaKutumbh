@@ -1,6 +1,4 @@
 ﻿
-
-
 @{
     ViewBag.Title = "Home";
     Layout = "~/Views/Shared/WebsiteLayout.cshtml";
@@ -21,12 +19,12 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <img src="/images/banner_img.png" class="banner_img" />
-                        </div>
-                        <div class="col-lg-6">
-                            <h1 class="text-white text-left banner_heading">
-                                करे अपने करियर की शुरुआत
-                                <span class="badge badge-primary banner_text"> Apana Kutumbh </span>
-                                के साथ <br /> आज ही <span class="badge badge-primary banner_text"> Real Estate Agent </span> &nbsp;बनकर अपने सपनों को पूरा करें |
+                         </div>
+                             <div class="col-lg-6">
+                               <h1 class="text-white text-left banner_heading">
+                                   करे अपने करियर की शुरुआत
+                                  <span class="badge badge-primary banner_text"> Apana Kutumbh </span>
+                                    के साथ <br /> आज ही <span class="badge badge-primary banner_text"> Real Estate Agent </span> &nbsp;बनकर अपने सपनों को पूरा करें |
                             </h1>
                             <a href="/Website/ContactUs" class="architact-btn">
                                 Contact with us
@@ -185,7 +183,7 @@
                 <div class="col-md-8 min-sec-ty pl-0">
                     <div class="row">
                         <div id="owl-demo5Agents" class="owl-demo5 owl-carousel owl-theme pl-20 pr-20">
-                            @foreach (var item in Model.lstSite)
+                            @foreach (var item in Model.lstImge)
                             {
                                 <div class="item pl-5 pr-5 min-type">
                                     <div class="min-type-t">
@@ -262,8 +260,7 @@
             <div class="tab-content p-0 shadow-none" id="pills-tabContent">
                 <div class="tab-pane fade active show" id="pills-SiteTypeName" role="tabpanel"
                      aria-labelledby="pills-apartment-tab">
-                    <div class="row">
-                       
+                    <div class="row">                  
                             @foreach (var item in Model.lstSite)
                             {
                                 <div class="col-md-3">
@@ -273,7 +270,7 @@
                                         </a>
                                         <span class="tag-l">For Sale</span>
                                     </div>
-                                    @*<div class="min-pro-box">
+                                   @*<div class="min-pro-box">
                                         <a href="#">
 
                                             <img src="~/KYCDocuments/@item.SiteImage1" style="height:250px" class="bg-pro-i" />
@@ -282,19 +279,19 @@
 
                                     </div>
                                     <div class="min-pro-box">
-                                        <a href="#">
-                                            <img src="~/KYCDocuments/@item.SiteImage2" style="height:250px" class="bg-pro-i" />
-                                        </a>
-                                        <span class="tag-l">For Sale</span>
+        <a href="#">
+            <img src="~/KYCDocuments/@item.SiteImage2" style="height:250px" class="bg-pro-i" />
+        </a>
+        <span class="tag-l">For Sale</span>
 
-                                    </div>
-                                    <div class="min-pro-box">
-                                        <a href="#">
+    </div>
+                                     <div class="min-pro-box">
+        <a href="#">
 
-                                            <img src="~/KYCDocuments/@item.SiteImage3" style="height:250px" class="bg-pro-i" />
-                                        </a>
-                                        <span class="tag-l">For Sale</span>
-                                    </div>*@
+            <img src="~/KYCDocuments/@item.SiteImage3" style="height:250px" class="bg-pro-i" />
+        </a>
+        <span class="tag-l">For Sale</span>
+    </div>*@
                                   
                                 </div>  
                             }
@@ -303,7 +300,6 @@
                 <div class="tab-pane fade" id="pills-apartment" role="tabpanel"
                      aria-labelledby="pills-apartment-tab">
                     <div class="row">
-
                         <div class="col-md-4">
                             <div class="min-pro-box">
                                 <a href="#">

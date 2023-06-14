@@ -37,7 +37,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\User\AppData\Local\Temp\vsE680.tmp\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Afluex\AppData\Local\Temp\vsE7F2.tmp\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -46,7 +46,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\User\AppData\Local\Temp\vsE680.tmp\Release\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Afluex\AppData\Local\Temp\vsE7F2.tmp\Release\</IntermediateOutputPath>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
@@ -7689,6 +7689,7 @@
     <Content Include="Views\Website\Property.cshtml" />
     <Content Include="Views\Website\PropertyDetails.cshtml" />
     <Content Include="Views\Website\Home.cshtml" />
+    <Content Include="Views\AdminReports\EnquiryReport.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

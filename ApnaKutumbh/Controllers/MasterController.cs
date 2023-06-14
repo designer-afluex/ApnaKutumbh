@@ -692,6 +692,7 @@ namespace ApnaKutumbh.Controllers
                     model.SiteImage1 = dsSite.Tables[0].Rows[0]["Image1"].ToString();
                     model.SiteImage2 = dsSite.Tables[0].Rows[0]["Image2"].ToString();
                     model.SiteImage3 = dsSite.Tables[0].Rows[0]["Image3"].ToString();
+                    model.IsPopular = dsSite.Tables[0].Rows[0]["IsPopular"].ToString();
                 }
 
 
@@ -895,6 +896,11 @@ namespace ApnaKutumbh.Controllers
                 var allowedExtensions = new[] {
                  ".Jpg", ".png", ".jpg", "jpeg"
                 };
+
+                if (files0 == null)
+                {
+
+                }
                 var fileName0 = Path.GetFileName(files0.FileName);
                 var fileName1 = Path.GetFileName(files1.FileName);
                 var fileName2 = Path.GetFileName(files2.FileName);
@@ -994,6 +1000,10 @@ namespace ApnaKutumbh.Controllers
 
                 obj.AddedBy = Session["Pk_AdminId"].ToString();
                 DataSet ds = new DataSet();
+
+       
+
+               
                 ds = obj.UpdateSite();
                 if (ds != null && ds.Tables[0].Rows.Count > 0)
                 {
@@ -1043,6 +1053,8 @@ namespace ApnaKutumbh.Controllers
                     obj.SiteImage1 = (r["Image1"].ToString());
                     obj.SiteImage2 = (r["Image2"].ToString());
                     obj.SiteImage3 = (r["Image3"].ToString());
+                    obj.IsPopular = (r["IsPopular"].ToString());
+                    
                     lst.Add(obj);
                 }
                 model.lstSite = lst;

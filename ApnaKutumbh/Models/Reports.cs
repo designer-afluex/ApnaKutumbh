@@ -123,6 +123,8 @@ namespace ApnaKutumbh.Models
         public List<Reports> EMIBookingReports { get; set; }
 
 
+
+
         public DataSet GetBookingDetailsList()
         {
             SqlParameter[] para = { new SqlParameter("@PK_BookingId", PK_BookingId )};

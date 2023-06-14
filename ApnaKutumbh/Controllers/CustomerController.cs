@@ -141,7 +141,6 @@ namespace ApnaKutumbh.Controllers
 
                             //var fromAddress = new MailAddress("prakher.afluex@gmail.com");
                             //var toAddress = new MailAddress(model.Email);
-
                             System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient
                             {
                                 Host = "smtp.gmail.com",
