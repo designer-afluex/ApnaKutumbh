@@ -268,7 +268,7 @@
                             <div class="form-group row">
                                 @*<div class="col-sm-12">
                                     <h3>Upload your images  </h3>
-                                    <input type="file" id="files" name="files[]"  multiple />                           
+                                    <input type="file" id="files" name="files[]"  multiple />                   
                                 </div>*@
 
                                 <div class="upload__box">
@@ -282,9 +282,10 @@
                                 </div> 
 
                                 <div class="col-3">
-                                    <input type="checkbox" id="checkpop" name="checkpop" />Is Popular Properties
+                                    <input type="checkbox" id="checkpop" name="checkpop"  value="@Model.IsPopular"/>Is Popular Properties
 
-                                    <input type="hidden" id="textCheckbox" />
+                                    @*<input type="checkbox" id="check" class="checkbox" name="check" onclick="CheckAddress()" />Is Popular Properties*@
+                                    <input type="hidden" id="textCheckbox" value="@Model.IsPopular" />
                                 </div>
                             </div>
                          
@@ -320,7 +321,6 @@
                                                         i++;
                                                     }
                                                     <input type="hidden" id="hdRows" name="hdRows" value="@i" />
-
                                                 }
                                             }
                                         </tbody>
@@ -362,7 +362,7 @@
                             <a class="btn btn-info" href="/Master/SiteList" style="margin-left:5px">Back To List</a>
                         </div>
                         <input type="hidden" id="UserType" value="@Session["UserType"]" />
-                        <input type="hidden" id="UserTypeName" value="@Session["UserTypeName"]" />
+                        <input type="hidden" id="UserTypeName" value="@Session["UserTypeName"]"/>
 
                     </div>
 
@@ -383,19 +383,33 @@
 <script>
     $(document).ready(function () {
         ImgUpload();
-        $('#textCheckbox').val($(this).is(':checked'));
+
+        var IsCheck = $('#textCheckbox').val();
+        debugger;
+        if (IsCheck == "Yes") {      
+            $('#checkpop').is(':checked');
+            var x = document.getElementById("checkpop");
+                x.checked = true;      
+            
+        }
+
+        //$('#textCheckbox').val($(this).is(':checked'));
         $('#checkpop').change(function () {
             $('#textCheckbox').val($(this).is(':checked'));
         });
         $('#checkpop').click(function () {
             if (!$(this).is(':checked')) {
-              //  return confirm("Are you sure?");
+                var x = document.getElementById("checkpop");
+                x.checked = false;
+            //  return confirm("Are you sure?");
+            } else {
+                var x = document.getElementById("checkpop");
+                x.checked = true;            
             }
         });
 
         
     });
-
     function ImgUpload() {
         var imgWrap = "";
         var imgArray = [];
@@ -540,7 +554,7 @@
                 }
             },
             error: function () {
-                alert("Error occured!!")
+                alert("Error occured!!");
             }
         });
     }
@@ -721,7 +735,6 @@
     $('#btnUpdate').click(function () {
         debugger;
         //  validateform();
-
         var IsAllValid = true;
         $("#divload").css({ 'display': '' });
         $(".errortext").removeClass("errortext");
@@ -803,8 +816,7 @@
                     alert(response);
                     GetMenuDetails();
                   
-                   // location.reload();
-
+                    // location.reload();
                     //   window.location.href = "/Master/SiteMaster";
 
                     //  $(window).load(true);

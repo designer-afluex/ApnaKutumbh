@@ -19,7 +19,7 @@ namespace ApnaKutumbh.Models
             {
 
                // connectionString = "Data Source=103.48.51.111,1232;Initial Catalog=Apnakutumbdb; User Id=apnakutumbuser; Password=Apna123!@#; Integrated Security=false;";
-                connectionString = "Data Source=103.48.51.111,1232;Initial Catalog=ApnakutumbDB; User Id=apnakutumb; Password=Apna123!@#; Integrated Security=false;";
+                  connectionString = "Data Source=103.48.51.111,1232;Initial Catalog=ApnakutumbDB; User Id=apnakutumb; Password=Apna123!@#; Integrated Security=false;";
 
             }
             catch (Exception)
@@ -49,6 +49,7 @@ namespace ApnaKutumbh.Models
             }
         }
 
+
         public static DataSet ExecuteQuery(string commandText, params SqlParameter[] parameters)
         {
             DataSet ds = new DataSet();
@@ -69,7 +70,6 @@ namespace ApnaKutumbh.Models
                 DataTable dt = new DataTable();
                 dt.Columns.Add("Msg");
                 dt.Columns.Add("ErrorMessage");
-
                 DataRow dr = dt.NewRow();
                 dr["Msg"] = "0";
                 dr["ErrorMessage"] = ex.Message;

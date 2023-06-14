@@ -1221,7 +1221,6 @@ namespace ApnaKutumbh.Controllers
 
                 if (ds.Tables[0].Rows[0]["MSG"].ToString() == "1")
                 {
-
                     newdata.Result = "yes";
                     ViewBag.PK_BookingId = ds.Tables[0].Rows[0]["PK_BookingId"].ToString();
                     ViewBag.CustomerName = ds.Tables[0].Rows[0]["CustomerName"].ToString();
@@ -2237,7 +2236,6 @@ namespace ApnaKutumbh.Controllers
 
             //model.LoginId = LoginId;
             List<SelectListItem> Status = Common.Status();
-
             ViewBag.Status = Status;
             List<Reports> lst1 = new List<Reports>();
             DataSet ds11 = model.ReturnBenefitView();
@@ -2262,7 +2260,6 @@ namespace ApnaKutumbh.Controllers
                     Obj.InstAmt = r["InstAmt"].ToString();
                     lst1.Add(Obj);
                 }
-
                 model.lstassociate = lst1;
             }
             return View(model);
@@ -2847,6 +2844,31 @@ namespace ApnaKutumbh.Controllers
                 }
                 model.ClosingWisePayoutlist = lst;
             }
+            return View(model);
+        }
+
+        public ActionResult EnquiryReport()
+        {
+            List<Master> lstEnquiry = new List<Master>();
+            Master model = new Master();
+
+            DataSet ds = model.GetEnquiryDetails();
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow r in ds.Tables[0].Rows)
+                {
+                    Master dss = new Master();
+                    dss.Name = r["Name"].ToString();
+                    dss.Email = r["Email"].ToString();
+                    dss.Message = r["Message"].ToString();
+                    dss.Mobile = r["Mobile"].ToString();
+                    dss.AddedOn = r["AddedOn"].ToString();
+                    lstEnquiry.Add(dss);
+                }
+                model.lstEnquiry = lstEnquiry;
+            }
+
+
             return View(model);
         }
 

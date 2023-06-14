@@ -59,16 +59,13 @@ namespace ApnaKutumbh.Controllers
                     ProductLeftBusiness = dr["ProductBusinessLeft"].ToString(),
                     ProductRightBusiness = dr["ProductBusinessRight"].ToString(),
                 });
-
-
-
-
+                
             }
             return Json(tree, JsonRequestBehavior.AllowGet);
 
         }
 
-        public JsonResult GetGeneologyForAdmin(string memID)
+        public JsonResult GetGeneologyForAdmin(string memID) 
         {
             AgentModel model = new AgentModel();
             model.Fk_UserId = memID;
