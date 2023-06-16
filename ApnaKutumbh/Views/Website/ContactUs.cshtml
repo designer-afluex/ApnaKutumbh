@@ -33,26 +33,31 @@
                             <form class="row" action=""
                                   method="POST">
                                 <div class="form-group col-md-6">
-                                    <input type="text" placeholder="Name" name="Name" class="form-control form-com">
+                                    <input type="text" placeholder="Name" name="Name" id="Name" class="form-control form-com">
+                                    <span id="checkName" style="color: red;"> **Please fill  Name</span>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <input type="email" placeholder="Email" name="Email"
+                                    <input type="email" placeholder="Email" name="Email" id="Email"
                                            class="form-control form-com">
+                                    <span id="checkEmail" style="color: red;"> **Please fill  Email</span>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <input type="number" maxlength="10" placeholder="Mobile" name="Mobile"
+                                    <input type="number" maxlength="10" placeholder="Mobile" name="Mobile" id="Mobile"
                                            class="form-control form-com">
+                                    <span id="checkMobile" style="color: red;"> **Please fill  Mobile</span>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <input type="text" placeholder="Subject" name="Subject"
-                                           class="form-control form-com">
+                                       id="Subject"   class="form-control form-com">
+                                    <span id="checkSubject" style="color: red;"> **Please fill  Subject</span>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <textarea placeholder="Message" name="Message"
-                                              class="form-control form-com-message "></textarea>
+                                        id="Message"class="form-control form-com-message "></textarea>
+                                    <span id="checkMessage" style="color: red;"> **Please fill  Message</span>
                                 </div>
                                 <div class="col-md-12">
-                                    <button class="animation-cer-btn" id="my-form-button">
+                                    <button class="animation-cer-btn" id="SendEmail">
                                         Send Message<span class="line2"></span>
                                     </button>
                                     <p id="my-form-status-contact"></p>
@@ -113,5 +118,109 @@
         </div>
     </section>
 </div>
-
 <script src="js/footer.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+  //  $(document).ready(function () {    
+        $("#checkName").hide();
+        $("#checkEmail").hide();
+        $("#checkMobile").hide();
+        $("#checkSubject").hide();
+        $("#checkMessage").hide();
+        //$('#SendEmail').click(function () {
+        //    sendMail();
+        //})
+   // })    
+ //function sendMail() {
+
+        $('#SendEmail').click(function () {
+            var isAllValid = true;
+            // validation on Submit Button
+
+            let Name1 = $("#Name").val();
+            if (Name1.length == "") {
+                $("#checkName").show();
+                isAllValid = false;
+                return false;
+            }
+
+            let Email1 = $("#Email").val();
+            if (Email1.length == "") {
+                $("#checkEmail").show();
+                isAllValid = false;
+                return false;
+            }
+
+            let Mobile1 = $("#Mobile").val();
+            if (Mobile1.length == "") {
+                $("#checkMobile").show();
+                isAllValid = false;
+                return false;
+            }
+           
+            let Subject1 = $("#Subject").val();
+            if (Subject1.length == "") {
+                $("#checkSubject").show();
+                isAllValid = false;
+                return false;
+            }
+
+            let Message1 = $("#Message").val();
+            if (Message1.length == "") {
+                $("#checkMessage").show();
+                isAllValid = false;
+                return false;
+            }
+
+      //  });
+        var name = document.getElementById('Name').value;
+        var email = document.getElementById('Email').value;
+        var Mobile = document.getElementById('Mobile').value;
+        var Message = document.getElementById('Message').value;
+        var Subject = document.getElementById('Subject').value;
+        var body = 'name:' + name + '<br/>email:' + email + '<br/>phone:' + Mobile + '<br/>Message:' + Message + '<br/>Subject:' + Subject;
+        debugger;
+        Email.send({
+            Host: "smtp.elasticemail.com",
+            Username: "afluexdeveloper7@gmail.com",
+            Password: "BFC48F0F5A85EFF1201DFF5EE656D109502B",
+            To: 'parveen.mrj@gmail.com',
+            From: "afluexdeveloper7@gmail.com",
+            Subject: Subject,
+            Body: body,
+        })
+            .then(function (message) {
+                alert("Message Send Successfully!!");
+                $("#Name").val('');
+                $("#Email").val('');
+                $("#Mobile").val('');
+                $("#Description").val('');
+               // sendEmail();
+            });
+
+    });
+  //  }
+    //function sendEmail() {
+    //    var email = '{Name: "' + $("#Name").val() + '", Email: "' + $("#Email").val() + '",Mobile: "' + $("#Mobile").val() + '",Description: "' + $("#Description").val() + '"}';
+    //    $.ajax({
+    //        type: "POST",
+    //        url: "/Website/SendEmail",
+    //        data: email,
+    //        contentType: "application/json; charset=utf-8",
+    //        dataType: "json",
+    //        success: function (response) {
+    //            debugger;
+    //           // alert(response);
+    //        },
+    //        failure: function (response) {
+    //            alert("Error");
+    //        },
+    //        error: function (response) {
+    //           // alert('Error');
+    //        }
+    //    });
+    //}
+</script>
+

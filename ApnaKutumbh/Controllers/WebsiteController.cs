@@ -14,9 +14,7 @@ namespace ApnaKutumbh.Controllers
     {
         //GET: Website
         public ActionResult Index()
-        {
-            
-
+        {           
             return Redirect("/AgencyBazaarLandingPage/index.html");
             //return View();
         }
@@ -79,9 +77,9 @@ namespace ApnaKutumbh.Controllers
         {
             return View();
         }
+
         public ActionResult Property()
         {
-
             List<Master> lst = new List<Master>();
             Master model = new Master();
             DataSet ds = model.GetSiteList();
@@ -177,10 +175,7 @@ namespace ApnaKutumbh.Controllers
             }
 
             return RedirectToAction("PropertyDetails");
-        }
-
-
-
+        }     
 
         public ActionResult ContactUs()
         {
