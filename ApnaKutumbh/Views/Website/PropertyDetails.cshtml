@@ -80,7 +80,7 @@
                                     <span id="checkEmail" style="color: red;"> **Please fill  Email</span>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" id="Mobile" name="Mobile" placeholder="Phone" class="form-control fill-form" />
+                                    <input type="text" id="Mobile" maxlength="10" name="Mobile" placeholder="Phone" class="form-control fill-form" />
                                 </div>
                             <span id="checkMobile" style="color: red;"> **Please fill  Phone</span>
                                 <div class="form-group">
@@ -113,11 +113,21 @@
     $("#checkSubject").hide();
     $("#checkMessage").hide();
 
+    $("#Mobile").keyup(function (e) {
+        if (!isNaN(parseInt(this.value, 10))) {
+            this.value = parseInt(this.value);
+        } else {
+            this.value = 0;
+        }
+        this.value = this.value.replace(/[^0-9]/g, '');
+
+    });
+
+
 
     $('#sendMail').click(function () {
         var isAllValid = true;
         // validation on Submit Button
-
         let Name1 = $("#Name").val();
         if (Name1.length == "") {
             $("#checkName").show();
@@ -144,7 +154,6 @@
         } {
             $("#checkMobile").hide();
         }
-
         let Description1 = $("#Description").val();
         if (Description1 == "") {
             $("#checkMessage").show();
@@ -169,13 +178,9 @@
             Body: body,
         })
             .then(function (message) {
-                alert("Message Send Successfully!!");
-               
+                alert("Message Send Successfully!!");              
                 sendEmail();
-
             });
-
-
     });
   //  }
 
@@ -211,5 +216,6 @@
             }
         });
     }
+
 </script>
 

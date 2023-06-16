@@ -42,8 +42,7 @@
                                     <span id="checkEmail" style="color: red;"> **Please fill  Email</span>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <input type="number" maxlength="10" placeholder="Mobile" name="Mobile" id="Mobile"
-                                           class="form-control form-com">
+                                    <input type="text" maxlength="10" placeholder="Mobile" name="Mobile" id="Mobile"class="form-control form-com">
                                     <span id="checkMobile" style="color: red;"> **Please fill  Mobile</span>
                                 </div>
                                 <div class="form-group col-md-6">
@@ -129,11 +128,23 @@
         $("#checkMobile").hide();
         $("#checkSubject").hide();
         $("#checkMessage").hide();
-        //$('#SendEmail').click(function () {
-        //    sendMail();
-        //})
-   // })    
- //function sendMail() {
+  
+
+    
+        $("#Mobile").keyup(function (e) {
+            if (!isNaN(parseInt(this.value, 10))) {
+                this.value = parseInt(this.value);
+            } else {
+                this.value = 0;
+            }
+            this.value = this.value.replace(/[^0-9]/g, '');
+           
+        });
+
+        //function str() {
+           
+        //}
+
 
         $('#SendEmail').click(function () {
             var isAllValid = true;

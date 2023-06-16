@@ -173,7 +173,6 @@ namespace ApnaKutumbh.Controllers
 
                 }
             }
-
             return RedirectToAction("PropertyDetails");
         }     
 
