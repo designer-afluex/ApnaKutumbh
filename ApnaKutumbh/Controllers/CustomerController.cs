@@ -49,7 +49,6 @@ namespace ApnaKutumbh.Controllers
                         model.NomineeRelation = dsPlotDetails.Tables[0].Rows[0]["NomineeRelation"].ToString();
                     }
                 }
-
                 else
                 {
 

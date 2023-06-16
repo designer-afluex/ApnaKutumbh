@@ -2214,9 +2214,10 @@ namespace ApnaKutumbh.Controllers
                     Obj.AssociateLoginID = r["AssociateLoginID"].ToString();
                     Obj.AssociateName = r["AssociateName"].ToString();
                     Obj.ReturnBenefitStartDate = r["ReturnBenefitStartDate"].ToString();
-                    // Obj.PlotNumber = r["PlotNumber"].ToString();
+                    
+                    //Obj.PlotNumber = r["PlotNumber"].ToString();
                     //Obj.DueDate = r["Installmentdate"].ToString();
-                    // Obj.Status = r["IsPaid"].ToString();
+                    //Obj.Status = r["IsPaid"].ToString();
                     //Obj.ReceiptNo = r["ReceiptNo"].ToString();
                     //Obj.TransactionNo = r["TransactionNo"].ToString();
                     //Obj.TransactionDate = r["TransactionDate"].ToString();
@@ -2652,6 +2653,8 @@ namespace ApnaKutumbh.Controllers
             ViewBag.ddlpaymentmode = ddlpaymentmode;
             return View(model);
         }
+
+
         [HttpPost]
         [ActionName("EditPaidList")]
         [OnAction(ButtonName = "UpdatePayment")]

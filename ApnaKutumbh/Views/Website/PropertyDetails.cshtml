@@ -69,33 +69,28 @@
                         </div>*@
                         <div class="send-message-pro">
                             <h3>Send Enquiry</h3>
-                            @*<form>*@
-                          
-
+                            @*<form>*@                         
                                 <div class="form-group">
                                     <input type="text" id="Name" name="Name" placeholder="Name" class="form-control fill-form" />
+                                    <span id="checkName" style="color: red;"> **Please fill  Name</span>
                                     
-                                    <span id="first_name_error">*</span>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" id="Email" name="Email"  placeholder="Email" class="form-control fill-form" />
-                                    <span id="email_address1_error">*</span>
+                                    <span id="checkEmail" style="color: red;"> **Please fill  Email</span>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" id="Mobile" name="Mobile" placeholder="Phone" class="form-control fill-form" />
                                 </div>
+                            <span id="checkMobile" style="color: red;"> **Please fill  Phone</span>
                                 <div class="form-group">
                                     <textarea placeholder="Message" id="Description" name="Description"  class="form-control fill-form"></textarea>
+                                    <span id="checkMessage" style="color: red;"> **Please fill  Description</span>
                                 </div>
-                                <div class="form-group">
-                                    @*<button class="send-m" >Send Message</button>*@
-                                    <button class="btn btn-primary" onclick="sendMail()">Send Message</button>
-
-                                    
+                            
+                                <div class="form-group">                                 
+                                    <button class="btn btn-primary" id="sendMail">Send Message</button>         
                                 </div>
-
-                        
-                            @*</form>*@
                         </div>
                     </div>
                 </div>
@@ -103,10 +98,61 @@
         </div>
     </section>
 </div>
-
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+
+
+
+
 <script>
-    function sendMail() {      
+    //  function sendMail() {
+    $("#checkName").hide();
+    $("#checkEmail").hide();
+    $("#checkMobile").hide();
+    $("#checkSubject").hide();
+    $("#checkMessage").hide();
+
+
+    $('#sendMail').click(function () {
+        var isAllValid = true;
+        // validation on Submit Button
+
+        let Name1 = $("#Name").val();
+        if (Name1.length == "") {
+            $("#checkName").show();
+            isAllValid = false;
+            return false;
+        } else {
+            $("#checkName").hide();
+        }
+
+        let Email1 = $("#Email").val();
+        if (Email1.length == "") {
+            $("#checkEmail").show();
+            isAllValid = false;
+            return false;
+        } else {
+            $("#checkEmail").hide();
+        }
+
+        let Mobile1 = $("#Mobile").val();
+        if (Mobile1.length == "") {
+            $("#checkMobile").show();
+            isAllValid = false;
+            return false;
+        } {
+            $("#checkMobile").hide();
+        }
+
+        let Description1 = $("#Description").val();
+        if (Description1 == "") {
+            $("#checkMessage").show();
+            isAllValid = false;
+            return false;
+        } else {
+            $("#checkMessage").hide();
+        }
         var name = document.getElementById('Name').value;
         var email = document.getElementById('Email').value;
         var Mobile = document.getElementById('Mobile').value;
@@ -124,14 +170,15 @@
         })
             .then(function (message) {
                 alert("Message Send Successfully!!");
-                $("#Name").val('');
-                $("#Email").val('');
-                $("#Mobile").val('');
-                $("#Description").val('');
+               
                 sendEmail();
 
             });
-    }
+
+
+    });
+  //  }
+
     function sendEmail() {
         var email = '{Name: "' + $("#Name").val() + '", Email: "' + $("#Email").val() + '",Mobile: "' + $("#Mobile").val() + '",Description: "' + $("#Description").val() + '"}';
         $.ajax({
@@ -142,13 +189,25 @@
             dataType: "json",
             success: function (response) {
                 debugger;              
-               // alert(response);
+                // alert(response);        
+                $("#Name").val('');
+                $("#Email").val('');
+                $("#Mobile").val('');
+                $("#Description").val('');
             },
             failure: function (response) {
-                alert("Error");
+                //alert("Error");
+                $("#Name").val('');
+                $("#Email").val('');
+                $("#Mobile").val('');
+                $("#Description").val('');
             },
             error: function (response) {
-               // alert('Error');
+                // alert('Error');
+                $("#Name").val('');
+                $("#Email").val('');
+                $("#Mobile").val('');
+                $("#Description").val('');
             }
         });
     }
